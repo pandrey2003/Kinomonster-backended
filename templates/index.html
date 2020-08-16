@@ -17,25 +17,25 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/media-queries.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/media-queries.css') }}">
 
 	<!-- Slippry: A Free jQuery Responsive Slider Plugin for Modern Times -->
-	<link rel="stylesheet" href="assets/css/slippry.css">
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css.map">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css.map">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/slippry.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css.map') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css.map') }}">
 
 	<!-- Include the CSS -->
 	<link href="dist/toolkit.min.css" rel="stylesheet">
 
-	<script src="lib/bootstrap/js/"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/preloader.min.js"></script>
-	<script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
-	<script src="assets/js/slippry.js"></script> <!-- slideshow -->
-	<script src="assets/js/typed.js"></script> <!-- type ani -->
+	<script src="{{ url_for('static', filename='libs/bootstrap/js/') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/preloader.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/modernizr.js') }}"></script> <!-- Modernizr -->
+	<script src="{{ url_for('static', filename='js/slippry.js') }}"></script> <!-- slideshow -->
+	<script src="{{ url_for('static', filename='js/typed.js') }}"></script> <!-- type ani -->
 
 </head>
 <body>
@@ -44,17 +44,17 @@
 		<div class="header">
 			<div class="logo">
 				<div class="logo_text">
-					<h1><a href="index.html">КиноМонстр</a></h1>
+					<h1><a href="{{ url_for('home') }}">КиноМонстр</a></h1>
 					<h2>Кино - наша страсть!</h2>
 				</div>
 			</div>
 			<div class="menubar">
 				<ul class="menu">
-					<li class="selected"><a href="index.html">Главная</a></li>	
-					<li><a href="films.html">Фильмы</a></li>
-					<li><a href="serial.html">Сериалы</a></li>
-					<li><a href="rating.html">Рейтинг фильмов</a></li>
-					<li><a href="contact.html">Контакты</a></li>
+					<li class="selected"><a href="{{ url_for('home') }}">Главная</a></li>	
+					<li><a href="{{ url_for('films') }}">Фильмы</a></li>
+					<li><a href="{{ url_for('serial') }}">Сериалы</a></li>
+					<li><a href="{{ url_for('rating') }}">Рейтинг фильмов</a></li>
+					<li><a href="{{ url_for('contact') }}">Контакты</a></li>
 				</ul>
 			</div>
 		</div>
@@ -88,7 +88,7 @@
 				<div class="sidebar">
 					<h2>Рейтинг фильмов</h2>
 					<ul>
-						<li><a href="show.html">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
+						<li><a href="{{ url_for('show') }}">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
 						<li><a href="#">Матрица</a><span class="rating_sidebar">8.0</span></li>
 						<li><a href="#">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
 						<li><a href="#">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
@@ -102,27 +102,27 @@
 			<div class="content">
 				<h1>Новые фильмы</h1>
 				<div class="films_block">
-					<a href="#"><img src="assets/img/matrix.png"></a>
-					<a href="#"><img src="assets/img/max.png"></a>
-					<a href="show.html"><img src="assets/img/inter.png"></a>
-					<a href="#"><img src="assets/img/cloud.png"></a>
+					<a href="#"><img src="{{ url_for('static', filename='img/matrix.png') }}"></a>
+					<a href="#"><img src="{{ url_for('static', filename='img/max.png') }}"></a>
+					<a href="{{ url_for('show') }}"><img src="{{ url_for('static', filename='img/inter.png') }}"></a>
+					<a href="#"><img src="{{ url_for('static', filename='img/cloud.png') }}"></a>
 				</div>
 				<h1>Новые сериалы</h1>
 				<div class="films_block">
-					<a href="#"><img src="assets/img/dead.png"></a>
-					<a href="#"><img src="assets/img/silicon.png"></a>
-					<a href="#"><img src="assets/img/breakingbad.png"></a>
-					<a href="#"><img src="assets/img/xfiles.png"></a>
+					<a href="#"><img src="{{ url_for('static', filename='img/dead.png') }}"></a>
+					<a href="#"><img src="{{ url_for('static', filename='img/silicon.png') }}"></a>
+					<a href="#"><img src="{{ url_for('static', filename='img/breakingbad.png') }}"></a>
+					<a href="#"><img src="{{ url_for('static', filename='img/xfiles.png') }}"></a>
 				</div>
 				<div class="posts">
 					<hr>
-					<h2> <a href="show.html">Как снимали Интерстеллар</a> </h2>
+					<h2> <a href="{{ url_for('show') }}">Как снимали Интерстеллар</a> </h2>
 					<div class="posts_content">
 						<p>
 							45 лет исполнилось Кристоферу Нолану — одному из самых успешных режиссеров нашего времени, чьи работы одинаково любимы как взыскательными критиками, так и простыми зрителями. Фильмом изначально занималась студия Paramount. Когда Кристофер Нолан занял место режиссера, студия Warner Bros., которая выпускала его последние фильмы, добилась участия в проекте.
 						</p>
 					</div>
-					<p><strong><a href="show.html">Читать</a></strong></p>
+					<p><strong><a href="{{ url_for('show') }}">Читать</a></strong></p>
 					<hr>
 					<h2><a href="-">Актер Том Хенкс поделился впечатлением о фестивале</a></h2>
 					<div class="posts_content">
@@ -135,11 +135,11 @@
 		<!--- - - - - - - - Start footer - - - - - -->
 		<div class="footer">
 			<p>
-				<a href="index.html">Главная</a> |
-				<a href="films.html">Фильмы</a> | 
-				<a href="serial.html">Сериалы</a> |
-				<a href="rating.html">Рейтинг фильмов</a> |
-				<a href="contact.html">Контакты</a>
+				<a href="{{ url_for('home') }}">Главная</a> |
+				<a href="{{ url_for('films') }}">Фильмы</a> | 
+				<a href="{{ url_for('serial') }}">Сериалы</a> |
+				<a href="{{ url_for('rating') }}">Рейтинг фильмов</a> |
+				<a href="{{ url_for('contact') }}">Контакты</a>
 			</p>
 			<p>&copy Nirvanas 2017</p>
 		</div>
@@ -149,18 +149,18 @@
 	<p id="back-top"><a href="#top"><span></span></a></p>
 
 	<!--- - - - - - - - Resource jQuery - - - - - -->
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/scrollReveal.min.js"></script>
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/scrollReveal.min.js') }}"></script>
 	<!--- - - - - - - - Атрибут defer откладывает выполнение скрипта, пока вся страница не будет загружена полностью - - - - - -->
-	<script src="assets/js/parallax.js" defer></script> 
+	<script src="{{ url_for('static', filename='js/parallax.js') }}" defer></script> 
 
 
 	<!--- - - - - - - - jQuery (necessary for Bootstrap's JavaScript plugins) - - - - - -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 	<!--- - - - - - - - Include all compiled plugins (below), or include individual files as needed - - - - - -->
-	<script src="js/bootstrap.min.js"></script>
-	<script src="dist/toolkit.min.js"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='libs/bootstrap/js/toolkit.min.js') }}"></script>
 
 </body>
 </html>
