@@ -75,7 +75,7 @@
 						<input type="password" name="password_field" placeholder="Пароль" />
 						<input type="submit" class="btn" value="Вход" />
 						<div class="lables_passreg_text">
-							<span><a href="#">Забыли пароль?</a></span> | <span><a href="#">Регистрация</a></span>
+							<span><a href="/">Забыли пароль?</a></span> | <span><a href="/">Регистрация</a></span>
 						</div>
 					</form>
 				</div>
@@ -83,36 +83,36 @@
 					<h2>Новости</h2>
 					<span>31.02.2018</span>
 					<p>Мы запустили расширенный поиск</p>
-					<a href="#">Читать</a>
+					<a href="/">Читать</a>
 				</div>
 				<div class="sidebar">
 					<h2>Рейтинг фильмов</h2>
 					<ul>
 						<li><a href="{{ url_for('show') }}">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
-						<li><a href="#">Матрица</a><span class="rating_sidebar">8.0</span></li>
-						<li><a href="#">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
-						<li><a href="#">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
+						<li><a href="/">Матрица</a><span class="rating_sidebar">8.0</span></li>
+						<li><a href="/">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
+						<li><a href="/">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
 					</ul>
 				</div>
 				<div class="sidebar_button">
-					<a href="#"></a>
+					<a href="/"></a>
 				</div>
 			</div>
 			<!--- - - - - - - - Start main content - - - - - -->
 			<div class="content">
 				<h1>Новые фильмы</h1>
 				<div class="films_block">
-					<a href="#"><img src="{{ url_for('static', filename='img/matrix.png') }}"></a>
-					<a href="#"><img src="{{ url_for('static', filename='img/max.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/matrix.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/max.png') }}"></a>
 					<a href="{{ url_for('show') }}"><img src="{{ url_for('static', filename='img/inter.png') }}"></a>
-					<a href="#"><img src="{{ url_for('static', filename='img/cloud.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/cloud.png') }}"></a>
 				</div>
 				<h1>Новые сериалы</h1>
 				<div class="films_block">
-					<a href="#"><img src="{{ url_for('static', filename='img/dead.png') }}"></a>
-					<a href="#"><img src="{{ url_for('static', filename='img/silicon.png') }}"></a>
-					<a href="#"><img src="{{ url_for('static', filename='img/breakingbad.png') }}"></a>
-					<a href="#"><img src="{{ url_for('static', filename='img/xfiles.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/dead.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/silicon.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/breakingbad.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/xfiles.png') }}"></a>
 				</div>
 				<div class="posts">
 					<hr>
@@ -128,7 +128,7 @@
 					<div class="posts_content">
 						<p>16 февраля в Лондоне состоялась 67-я церемония вручения наград Британской киноакадемии. Леонардо ДиКаприо, Брэд Питт, Анджелина Джоли, Кейт Бланшетт, Хелен Миррен, Эми Адамс, Кристиан Бэйл, Альфонсо Куарон и другие гости и победители премии — в нашем репортаже.</p>
 					</div>
-					<p><strong><a href="#">Читать</a></strong></p>
+					<p><strong><a href="/">Читать</a></strong></p>
 				</div>
 			</div>
 		</div>

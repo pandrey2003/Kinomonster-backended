@@ -49,13 +49,13 @@
 				<ul class="menu">
 					<li><a href="{{ url_for('home') }}">Главная</a></li>	
 					<li class="selected"><a href="{{ url_for('films') }}">Фильмы</a></li>
-					<li><a href="#">Сериалы</a></li>
+					<li><a href="/">Сериалы</a></li>
 					<li><a href="{{ url_for('rating') }}">Рейтинг фильмов</a></li>
 					<li><a href="{{ url_for('contact') }}">Контакты</a></li>
 				</ul>
 			</div>
 			<div class="sidebar_button">
-				<a href="#"></a>
+				<a href="/"></a>
 			</div>
 		</div>
 		<!--- - - - - - - - Start sidebar - - - - - -->
@@ -75,7 +75,7 @@
 						<input type="password" name="password_field" placeholder="Пароль" />
 						<input type="submit" class="btn" value="Вход" />
 						<div class="lables_passreg_text">
-							<span><a href="#">Забыли пароль?</a></span> | <span><a href="#">Регистрация</a></span>
+							<span><a href="/">Забыли пароль?</a></span> | <span><a href="/">Регистрация</a></span>
 						</div>
 					</form>
 				</div>
@@ -83,15 +83,15 @@
 					<h2>Новости</h2>
 					<span>31.02.2018</span>
 					<p>Мы запустили расширенный поиск</p>
-					<a href="#">Читать</a>
+					<a href="/">Читать</a>
 				</div>
 				<div class="sidebar">
 					<h2>Рейтинг фильмов</h2>
 					<ul>
 						<li><a href="{{ url_for('show') }}">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
-						<li><a href="#">Матрица</a><span class="rating_sidebar">8.0</span></li>
-						<li><a href="#">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
-						<li><a href="#">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
+						<li><a href="/">Матрица</a><span class="rating_sidebar">8.0</span></li>
+						<li><a href="/">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
+						<li><a href="/">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
 					</ul>
 				</div>
 			</div>
