@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/htm" charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Контакты</title>
 	<meta name="description" content="Киномонстр - это портал о кино" />
 	<meta name="keywords" content="фильмы, фильмы онлайн, hd" />
+	<!-- <meta name="revisit-after" content="1 days" />  <- Использовать существующий sitemap.xml -->
+	<title>Главная страница</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -34,6 +36,7 @@
 	<script src="{{ url_for('static', filename='js/modernizr.js') }}"></script> <!-- Modernizr -->
 	<script src="{{ url_for('static', filename='js/slippry.js') }}"></script> <!-- slideshow -->
 	<script src="{{ url_for('static', filename='js/typed.js') }}"></script> <!-- type ani -->
+
 </head>
 <body>
 	<!--- - - - - - - - Start Menubar - - - - - -->
@@ -47,11 +50,11 @@
 			</div>
 			<div class="menubar">
 				<ul class="menu">
-					<li><a href="{{ url_for('home') }}">Главная</a></li>	
+					<li class="selected"><a href="{{ url_for('home') }}">Главная</a></li>	
 					<li><a href="{{ url_for('films') }}">Фильмы</a></li>
 					<li><a href="{{ url_for('serial') }}">Сериалы</a></li>
 					<li><a href="{{ url_for('rating') }}">Рейтинг фильмов</a></li>
-					<li class="selected"><a href="{{ url_for('contact') }}">Контакты</a></li>
+					<li><a href="{{ url_for('contact') }}">Контакты</a></li>
 				</ul>
 			</div>
 		</div>
@@ -85,7 +88,7 @@
 				<div class="sidebar">
 					<h2>Рейтинг фильмов</h2>
 					<ul>
-						<li><a href="{{ url_for('show') }}">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
+						<li><a href="{{ url_for('interstellar') }}">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
 						<li><a href="/">Матрица</a><span class="rating_sidebar">8.0</span></li>
 						<li><a href="/">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
 						<li><a href="/">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
@@ -97,15 +100,35 @@
 			</div>
 			<!--- - - - - - - - Start main content - - - - - -->
 			<div class="content">
-				<h1>Контакты</h1>
-				<p>Отправьте ваш отзыв о портале КиноМонстр</p>
-				<div class="send send_contact">	
-					<form method="post" action="#" id="contact">
-						<input type="text" name="review_name" placeholder="Ваше имя">
-						<input type="text" name="review_email" placeholder="Ваш email">
-						<textarea name="review_text"></textarea>
-						<input class="btn" type="submit" value="Отправить">
-					</form>
+				<h1>Новые фильмы</h1>
+				<div class="films_block">
+					<a href="/"><img src="{{ url_for('static', filename='img/matrix.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/max.png') }}"></a>
+					<a href="{{ url_for('interstellar') }}"><img src="{{ url_for('static', filename='img/inter.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/cloud.png') }}"></a>
+				</div>
+				<h1>Новые сериалы</h1>
+				<div class="films_block">
+					<a href="/"><img src="{{ url_for('static', filename='img/dead.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/silicon.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/breakingbad.png') }}"></a>
+					<a href="/"><img src="{{ url_for('static', filename='img/xfiles.png') }}"></a>
+				</div>
+				<div class="posts">
+					<hr>
+					<h2> <a href="{{ url_for('interstellar') }}">Как снимали Интерстеллар</a> </h2>
+					<div class="posts_content">
+						<p>
+							45 лет исполнилось Кристоферу Нолану — одному из самых успешных режиссеров нашего времени, чьи работы одинаково любимы как взыскательными критиками, так и простыми зрителями. Фильмом изначально занималась студия Paramount. Когда Кристофер Нолан занял место режиссера, студия Warner Bros., которая выпускала его последние фильмы, добилась участия в проекте.
+						</p>
+					</div>
+					<p><strong><a href="{{ url_for('interstellar') }}">Читать</a></strong></p>
+					<hr>
+					<h2><a href="-">Актер Том Хенкс поделился впечатлением о фестивале</a></h2>
+					<div class="posts_content">
+						<p>16 февраля в Лондоне состоялась 67-я церемония вручения наград Британской киноакадемии. Леонардо ДиКаприо, Брэд Питт, Анджелина Джоли, Кейт Бланшетт, Хелен Миррен, Эми Адамс, Кристиан Бэйл, Альфонсо Куарон и другие гости и победители премии — в нашем репортаже.</p>
+					</div>
+					<p><strong><a href="/">Читать</a></strong></p>
 				</div>
 			</div>
 		</div>
