@@ -35,5 +35,15 @@ def interstellar():
     return render_template("interstellar.jinja2")
 
 
+@app.route("/signup")
+def signup():
+    return render_template("signup.jinja2")
+
+
+@app.route("/forgot")
+def forgot():
+    return render_template("forgot.jinja2")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
