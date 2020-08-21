@@ -11,7 +11,6 @@ body {
 }
 
 p {
-  padding: 0 0 20px 0;
   line-height: 1.7em;
 }
 
@@ -327,6 +326,7 @@ hr {
 table {
   width: 100%;
   border: solid 1px #f4f4f4;
+  margin-bottom: 25px;
 }
 
 td {
