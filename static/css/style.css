@@ -228,7 +228,7 @@ hr {
 }
 
 .descriptions_film {
-  margin-bottom: 15%;
+  display: flex;
 }
 
 .descriptions_film img{
