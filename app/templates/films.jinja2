@@ -48,10 +48,10 @@
 			<div class="menubar">
 				<ul class="menu">
 					<li><a href="{{ url_for('home') }}">Home</a></li>	
-					<li class="selected"><a href="{{ url_for('films') }}">Movies</a></li>
-					<li><a href="{{ url_for('serial') }}">Serials</a></li>
-					<li><a href="{{ url_for('rating') }}">Movie ratings</a></li>
-					<li><a href="{{ url_for('contact') }}">Contact</a></li>
+					<li class="selected"><a href="{{ url_for('frontended.films') }}">Movies</a></li>
+					<li><a href="{{ url_for('frontended.serial') }}">Serials</a></li>
+					<li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
+					<li><a href="{{ url_for('servered.contact') }}">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 						<input type="password" name="password_field" placeholder="Password" />
 						<input type="submit" class="btn" value="Sign in" />
 						<div class="lables_passreg_text">
-							<span><a href="{{ url_for('forgot') }}">Forgot password?</a></span> | <span><a href="{{ url_for('signup') }}">Sign up</a></span>
+							<span><a href="{{ url_for('servered.forgot') }}">Forgot password?</a></span> | <span><a href="{{ url_for('servered.signup') }}">Sign up</a></span>
 						</div>
 					</form>
 				</div>
@@ -85,7 +85,7 @@
 				<div class="sidebar">
 					<h2>Movie ratings</h2>
 					<ul>
-						<li><a href="{{ url_for('interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
+						<li><a href="{{ url_for('frontended.interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
 						<li><a href="/">Matrix</a><span class="rating_sidebar">8.0</span></li>
 						<li><a href="/">Mad Max</a><span class="rating_sidebar">7.5</span></li>
 						<li><a href="/">Cloud Atlas</a><span class="rating_sidebar">7.4</span></li>
@@ -100,7 +100,7 @@
 				<div class="info_film">
 					<img src="{{ url_for('static', filename='img/inter.png') }}">
 					Christopher Nolan’s "Interstellar," about astronauts traveling to the other end of the galaxy to find a new home to replace humanity’s despoiled home-world, is frantically busy and earsplittingly loud.
-					<div class="button"><a href="{{ url_for('interstellar') }}">Watch</a></div>
+					<div class="button"><a href="{{ url_for('frontended.interstellar') }}">Watch</a></div>
 				</div>
 				<div class="info_film">
 					<img src="{{ url_for('static', filename='img/max.png') }}">
@@ -123,10 +123,10 @@
 		<div class="footer">
 			<p>
 				<a href="{{ url_for('home') }}">Home</a> |
-				<a href="{{ url_for('films') }}">Movies</a> | 
-				<a href="{{ url_for('serial') }}">Serials</a> |
-				<a href="{{ url_for('rating') }}">Movie ratings</a> |
-				<a href="{{ url_for('contact') }}">Contact</a>
+				<a href="{{ url_for('frontended.films') }}">Movies</a> | 
+				<a href="{{ url_for('frontended.serial') }}">Serials</a> |
+				<a href="{{ url_for('frontended.rating') }}">Movie ratings</a> |
+				<a href="{{ url_for('servered.contact') }}">Contact</a>
 			</p>
 			<p>&copy Nirvanas 2017</p>
 		</div>

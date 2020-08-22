@@ -53,10 +53,10 @@
 			<div class="menubar">
 				<ul class="menu">
 					<li class="selected"><a href="{{ url_for('home') }}">Home</a></li>	
-					<li><a href="{{ url_for('films') }}">Movies</a></li>
-					<li><a href="{{ url_for('serial') }}">Serials</a></li>
-					<li><a href="{{ url_for('rating') }}">Movie ratings</a></li>
-					<li><a href="{{ url_for('contact') }}">Contact</a></li>
+					<li><a href="{{ url_for('frontended.films') }}">Movies</a></li>
+					<li><a href="{{ url_for('frontended.serial') }}">Serials</a></li>
+					<li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
+					<li><a href="{{ url_for('servered.contact') }}">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -77,7 +77,7 @@
 						<input type="password" name="password_field" placeholder="Password" />
 						<input type="submit" class="btn" value="Sign in" />
 						<div class="lables_passreg_text">
-							<span><a href="{{ url_for('forgot') }}">Forgot password?</a></span> | <span><a href="{{ url_for('signup') }}">Sign up</a></span>
+							<span><a href="{{ url_for('servered.forgot') }}">Forgot password?</a></span> | <span><a href="{{ url_for('servered.signup') }}">Sign up</a></span>
 						</div>
 					</form>
 				</div>
@@ -90,7 +90,7 @@
 				<div class="sidebar">
 					<h2>Movie ratings</h2>
 					<ul>
-						<li><a href="{{ url_for('interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
+						<li><a href="{{ url_for('frontended.interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
 						<li><a href="/">Matrix</a><span class="rating_sidebar">8.0</span></li>
 						<li><a href="/">Mad Max</a><span class="rating_sidebar">7.5</span></li>
 						<li><a href="/">Cloud Atlas</a><span class="rating_sidebar">7.4</span></li>
@@ -106,7 +106,7 @@
 				<div class="films_block">
 					<a href="/"><img src="{{ url_for('static', filename='img/matrix.png') }}"></a>
 					<a href="/"><img src="{{ url_for('static', filename='img/max.png') }}"></a>
-					<a href="{{ url_for('interstellar') }}"><img src="{{ url_for('static', filename='img/inter.png') }}"></a>
+					<a href="{{ url_for('frontended.interstellar') }}"><img src="{{ url_for('static', filename='img/inter.png') }}"></a>
 					<a href="/"><img src="{{ url_for('static', filename='img/cloud.png') }}"></a>
 				</div>
 				<h1>New serials</h1>
@@ -118,13 +118,13 @@
 				</div>
 				<div class="posts">
 					<hr>
-					<h2> <a href="{{ url_for('interstellar') }}">Interstellar, Where No Movie Has Gone Before</a> </h2>
+					<h2> <a href="{{ url_for('frontended.interstellar') }}">Interstellar, Where No Movie Has Gone Before</a> </h2>
 					<div class="posts_content">
 						<p>
 							There is no reason at all you should care about the universe. For one thing, it doesn’t care a whit about you.
 						</p>
 					</div>
-					<p><strong><a href="{{ url_for('interstellar') }}">Read</a></strong></p>
+					<p><strong><a href="{{ url_for('frontended.interstellar') }}">Read</a></strong></p>
 					<hr>
 					<h2><a href="-">Robert Downey Jr. reveals facts about his youthhood</a></h2>
 					<div class="posts_content">
@@ -139,10 +139,10 @@
 		<div class="footer">
 			<p>
 				<a href="{{ url_for('home') }}">Home</a> |
-				<a href="{{ url_for('films') }}">Movies</a> | 
-				<a href="{{ url_for('serial') }}">Serials</a> |
-				<a href="{{ url_for('rating') }}">Movie ratings</a> |
-				<a href="{{ url_for('contact') }}">Contact</a>
+				<a href="{{ url_for('frontended.films') }}">Movies</a> | 
+				<a href="{{ url_for('frontended.serial') }}">Serials</a> |
+				<a href="{{ url_for('frontended.rating') }}">Movie ratings</a> |
+				<a href="{{ url_for('servered.contact') }}">Contact</a>
 			</p>
 			<p>&copy Nirvanas 2017</p>
 		</div>
