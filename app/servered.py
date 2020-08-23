@@ -10,14 +10,14 @@ servered = Blueprint(
 
 @servered.route("/contact")
 def contact():
-    return render_template("contact.jinja2")
+    return render_template("contact.html")
 
 
 @servered.route("/signup")
 def signup():
-    return render_template("signup.jinja2")
+    return render_template("signup.html")
 
 
 @servered.route("/forgot")
 def forgot():
-    return render_template("forgot.jinja2")
+    return render_template("forgot.html")

@@ -10,19 +10,19 @@ frontended = Blueprint(
 
 @frontended.route("/films")
 def films():
-    return render_template("films.jinja2")
+    return render_template("films.html")
 
 
 @frontended.route("/serial")
 def serial():
-    return render_template("serial.jinja2")
+    return render_template("serial.html")
 
 
 @frontended.route("/rating")
 def rating():
-    return render_template("rating.jinja2")
+    return render_template("rating.html")
 
 
 @frontended.route("/interstellar")
 def interstellar():
-    return render_template("interstellar.jinja2")
+    return render_template("interstellar.html")

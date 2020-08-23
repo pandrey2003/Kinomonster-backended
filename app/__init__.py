@@ -14,4 +14,4 @@ db = SQLAlchemy(app)
 
 @app.route("/")
 def home():
-    return render_template("index.jinja2")
+    return render_template("index.html")
