@@ -18,7 +18,7 @@ def signup(email, login, password):
         send_email(email=email, login=login, password=password)
         add_user(login=login, password=password)
     else:
-        return render_template("bad_email.jinja2")
+        return render_template("errors/bad_email.jinja2")
 
 
 def decrypt_password(password):
