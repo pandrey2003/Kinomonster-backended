@@ -1,4 +1,4 @@
-from app import db
+from app.database import db
 from sqlalchemy.ext.automap import automap_base
 
 Base = automap_base()

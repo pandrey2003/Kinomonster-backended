@@ -1,15 +1,15 @@
 from flask import Flask, render_template, url_for
-from flask_sqlalchemy import SQLAlchemy
+from .database import db
+
 from .frontended import frontended
 from .servered import servered
 
 app = Flask(__name__)
 app.config.from_object("config")
+db.init_app(app)
 
 app.register_blueprint(frontended)
 app.register_blueprint(servered)
-
-db = SQLAlchemy(app)
 
 
 @app.route("/")

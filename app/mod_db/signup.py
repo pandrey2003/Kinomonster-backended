@@ -13,12 +13,17 @@ encrypted_pwd = b"gAAAAABfQWlFS41yLCGyGuVax6vUKl" \
             b"KiA_jpyFX93H2StWZxJOfinJAOtqVKwF1Kq1KwTdOq3o="
 
 
+def check_login(login):
+    return db.session.query(Members.id).filter_by(login=login).scalar() is None
+
 def signup(email, login, password):
     if check_email(email):
         send_email(email=email, login=login, password=password)
         add_user(login=login, password=password)
+        message = f"Email with your credentials is sent to {email}"
     else:
-        return render_template("errors/bad_email.html")
+        message = f"{email} is not a correct email."
+    return message
 
 
 def decrypt_password(password):

@@ -100,14 +100,18 @@
 				<h1>Sign up</h1>
 				<p>Your email will be used only for restoring the password.</p>
 				<div class="send send_contact">	
-					<form method="post" action="#" id="contact">
-						<input type="text" name="new_name" placeholder="Your first name">
+					<form method="post" action="/signup" id="contact">
+						<input type="text" name="new_login" placeholder="Your new login">
 						<input type="text" name="new_email" placeholder="Your email">
 						<input type="password" name="new_password" placeholder="Your password" style="width: 500px">
 						<p></p>
 						<input class="btn" type="submit" value="Send" style="margin-left: 430px">
 					</form>
 				</div>
+				{% if message %}
+				<hr>
+				<p>{{ message }}</p>
+				{% endif %}
 			</div>
 		</div>
 		<!--- - - - - - - - Start footer - - - - - -->
