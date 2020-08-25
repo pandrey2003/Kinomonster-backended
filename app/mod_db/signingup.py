@@ -19,7 +19,7 @@ def check_login(login):
 def sign_up(email, login, password):
     if check_email(email):
         send_email(email=email, login=login, password=password)
-        add_user(login=login, password=password)
+        add_user(email=email, login=login, password=password)
         message = f"Email with your credentials is sent to {email}"
     else:
         message = f"{email} is not a correct email."
@@ -74,7 +74,7 @@ def check_email(email):
     return bool(match)
 
 
-def add_user(login, password):
-    new_user = Members(login=login, password=password)
+def add_user(email, login, password):
+    new_user = Members(email=email, login=login, password=password)
     session.add(new_user)
     session.commit()
