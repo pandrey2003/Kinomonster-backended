@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 
-import app.mod_db.signup as signup
-from app.mod_db.signup import db
+import app.mod_db.signingup as signingup
+from app.mod_db.signingup import session, Members
 
 servered = Blueprint(
     "servered",
@@ -23,8 +23,8 @@ def signup():
         new_email = request.form.get("new_email")
         new_password = request.form.get("new_password")
 
-        if signup.check_login(new_login):
-            status_email = signup.signup(
+        if signingup.check_login(new_login):
+            status_email = signingup.sign_up(
                 email=new_email,
                 login=new_login,
                 password=new_password

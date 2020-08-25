@@ -6,7 +6,7 @@ from getpass import getpass
 import smtplib, ssl
 import re
 
-from app.mod_db import *
+from app.mod_db import session, Members
 
 encrypted_pwd = b"gAAAAABfQWlFS41yLCGyGuVax6vUKl" \
         b"hubQAlylQqSSGPdVGoEwIOnRBQf3NYUPunf9RW0W32ZO5" \
@@ -14,9 +14,9 @@ encrypted_pwd = b"gAAAAABfQWlFS41yLCGyGuVax6vUKl" \
 
 
 def check_login(login):
-    return db.session.query(Members.id).filter_by(login=login).scalar() is None
+    return session.query(Members.id).filter_by(login=login).scalar() is None
 
-def signup(email, login, password):
+def sign_up(email, login, password):
     if check_email(email):
         send_email(email=email, login=login, password=password)
         add_user(login=login, password=password)
@@ -76,5 +76,5 @@ def check_email(email):
 
 def add_user(login, password):
     new_user = Members(login=login, password=password)
-    db.session.add(new_user)
-    db.session.commit()
+    session.add(new_user)
+    session.commit()
