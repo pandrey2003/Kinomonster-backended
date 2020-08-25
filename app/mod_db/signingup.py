@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, flash
 
 from cryptography.fernet import Fernet
 from getpass import getpass
@@ -17,13 +17,16 @@ def check_login(login):
     return not bool(session.query(Members).filter_by(login=login).first())
 
 def sign_up(email, login, password):
-    if check_email(email):
+    if check_email(email) and check_email_db(email) and check_login(login):
         send_email(email=email, login=login, password=password)
         add_user(email=email, login=login, password=password)
-        message = f"Email with your credentials is sent to {email}"
-    else:
-        message = f"{email} is not a correct email."
-    return message
+        flash(f"Email with your credentials is sent to {email}")
+    elif not check_email(email):
+        flash(f"{email} is not a correct email.")
+    elif not check_email_db(email):
+        flash(f"{email} is already in our database, sign in.")
+    elif not check_login(login):
+        flash(f"{login} is already in our database, sign in.")
 
 
 def decrypt_password(password):
@@ -72,6 +75,10 @@ def check_email(email):
     expression = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-z]{2,}"
     match = re.search(expression, email)
     return bool(match)
+
+
+def check_email_db(email):
+    return not bool(session.query(Members).filter_by(email=email).first())
 
 
 def add_user(email, login, password):

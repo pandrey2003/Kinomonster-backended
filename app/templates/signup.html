@@ -99,6 +99,17 @@
 			<div class="content">
 				<h1>Sign up</h1>
 				<p>Your email will be used only for restoring the password.</p>
+				{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						{% if message.startswith("Email with your credentials is sent to") %}
+							<p><b>{{ message }}</b></p>
+						{% else %}
+							<p><b>{{ message }}</b></p>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+				{% endwith %}
 				<div class="send send_contact">	
 					<form method="post" action="/signup" id="contact">
 						<input type="text" name="new_login" placeholder="Your new login">
@@ -108,10 +119,6 @@
 						<input class="btn" type="submit" value="Send" style="margin-left: 430px">
 					</form>
 				</div>
-				{% if message %}
-				<hr>
-				<p>{{ message }}</p>
-				{% endif %}
 			</div>
 		</div>
 		<!--- - - - - - - - Start footer - - - - - -->

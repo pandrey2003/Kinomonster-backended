@@ -20,3 +20,6 @@ CSRF_SESSION_KEY = "secret"
 
 # Suppress warnings
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+# Set secret key
+SECRET_KEY=b'_5y2L"F4Q8zWebDria\n\xec]/h'

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, flash
 
 import app.mod_db.signingup as signingup
 from app.mod_db.signingup import session, Members
@@ -23,21 +23,12 @@ def signup():
         new_email = request.form.get("new_email")
         new_password = request.form.get("new_password")
 
-        if signingup.check_login(new_login):
-            status_email = signingup.sign_up(
-                email=new_email,
-                login=new_login,
-                password=new_password
-            )
-            return render_template(
-            "signup.html",
-            message=status_email
-            )
-        return render_template(
-            "signup.html",
-            message=f"Login {new_login} already exists."
+        signingup.sign_up(
+            email=new_email,
+            login=new_login,
+            password=new_password
         )
-    return render_template("signup.html", message=None)
+    return render_template("signup.html")
 
 
 @servered.route("/forgot")
