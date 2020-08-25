@@ -22,4 +22,4 @@ CSRF_SESSION_KEY = "secret"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # Set secret key
-SECRET_KEY=b'_5y2L"F4Q8zWebDria\n\xec]/h'
+SECRET_KEY = b'\x82\xbf\x18\x9e\x91o\xc4\xbb\xd8b\xe7\x18\xab\x82\x1d'
