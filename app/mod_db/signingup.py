@@ -14,7 +14,7 @@ encrypted_pwd = b"gAAAAABfQWlFS41yLCGyGuVax6vUKl" \
 
 
 def check_login(login):
-    return session.query(Members.id).filter_by(login=login).scalar() is None
+    return not bool(session.query(Members).filter_by(login=login).first())
 
 def sign_up(email, login, password):
     if check_email(email):
