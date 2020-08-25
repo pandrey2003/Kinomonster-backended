@@ -69,7 +69,7 @@ def send_email(email, login, password):
 
 
 def check_email(email):
-    expression = "[a-zA-Z0-9.%+-]+@[a-zA-Z0-9]+\.[a-z]{2,}"
+    expression = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-z]{2,}"
     match = re.search(expression, email)
     return bool(match)
 
