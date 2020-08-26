@@ -4,7 +4,7 @@ from flask import session as user_session
 
 
 def check_user(login, password):
-    return bool(session.query(Members).filter(Members.login==login, Members.password==password))
+    return bool(session.query(Members).filter(Members.login==login, Members.password==password).first())
 
 
 def signin(login, password):
