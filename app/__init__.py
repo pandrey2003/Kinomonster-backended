@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for
 
 from .frontended import frontended
-from .servered import servered
+from .servered import servered, user_session
 
 app = Flask(__name__)
 app.config.from_object("config")
