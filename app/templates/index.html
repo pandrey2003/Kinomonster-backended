@@ -39,17 +39,18 @@
 
 	<!-- Added by A. Polukhin to override bootstrap.min.css for p -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
-</head>
-<body>
 	{% with messages = get_flashed_messages(category_filter=["js"]) %}
 	{% if messages %}
-		{% for message in messages %}
-			<script>
-				alert(message);
-			</script>
-		{% endfor %}
+		<script>
+			var messages = {{ messages | safe}};
+			for (var i=0; i<messages.length; i++) {
+        	  alert(messages[i]);
+      		}
+		</script>
 	{% endif %}
 	{% endwith %}
+</head>
+<body>
 	<!--- - - - - - - - Start Menubar - - - - - -->
 	<div class="main">
 		<div class="header">

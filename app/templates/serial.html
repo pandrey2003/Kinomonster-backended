@@ -37,15 +37,6 @@
 	<script src="{{ url_for('static', filename='js/typed.js') }}"></script> <!-- type ani -->
 </head>
 <body>
-	{% with messages = get_flashed_messages(category_filter=["js"]) %}
-	{% if messages %}
-		{% for message in messages %}
-			<script>
-				alert(message);
-			</script>
-		{% endfor %}
-	{% endif %}
-	{% endwith %}
 	<!--- - - - - - - - Start Menubar - - - - - -->
 	<div class="main">
 		<div class="header">

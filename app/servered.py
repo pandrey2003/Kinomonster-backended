@@ -39,13 +39,13 @@ def server_signin():
     login = request.form["login_field"]
     password = request.form["password_field"]
     signingin.signin(login, password)
-    return render_template("index.html")
+    return redirect(url_for("home"))
 
 
 @servered.route("/server/logout", methods=["POST"])
 def server_logout():
     signingin.logout()
-    return render_template("index.html")
+    return redirect(url_for("home"))
 
 
 @servered.route("/forgot")
