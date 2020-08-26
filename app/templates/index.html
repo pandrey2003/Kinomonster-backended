@@ -39,16 +39,6 @@
 
 	<!-- Added by A. Polukhin to override bootstrap.min.css for p -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
-	{% with messages = get_flashed_messages(category_filter=["js"]) %}
-	{% if messages %}
-		<script>
-			var messages = {{ messages | safe}};
-			for (var i=0; i<messages.length; i++) {
-        	  alert(messages[i]);
-      		}
-		</script>
-	{% endif %}
-	{% endwith %}
 </head>
 <body>
 	<!--- - - - - - - - Start Menubar - - - - - -->
@@ -181,6 +171,17 @@
 	<!--- - - - - - - - Include all compiled plugins (below), or include individual files as needed - - - - - -->
 	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='libs/bootstrap/js/toolkit.min.js') }}"></script>
-
+	{% with messages = get_flashed_messages(category_filter=["js"]) %}
+	{% if messages %}
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				var messages = {{ messages | safe}};
+			    for (var i=0; i<messages.length; i++) {
+        	      alert(messages[i]);
+				}
+  			});
+		</script>
+	{% endif %}
+	{% endwith %}
 </body>
 </html>
