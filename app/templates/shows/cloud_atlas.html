@@ -95,10 +95,10 @@
 				<div class="sidebar">
 					<h2>Movie ratings</h2>
 					<ul>
-						<li><a href="{{ url_for('servered.interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
-						<li><a href="{{ url_for('servered.matrix') }}">Matrix</a><span class="rating_sidebar">8.0</span></li>
-						<li><a href="{{ url_for('servered.mad_max') }}">Mad Max</a><span class="rating_sidebar">7.5</span></li>
-						<li><a href="{{ url_for('servered.cloud_atlas') }}">Cloud Atlas</a><span class="rating_sidebar">7.4</span></li>
+						<li><a href="{{ url_for('servered.show', name='interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
+						<li><a href="{{ url_for('servered.show', name='matrix') }}">Matrix</a><span class="rating_sidebar">8.0</span></li>
+						<li><a href="{{ url_for('servered.show', name='mad_max') }}">Mad Max</a><span class="rating_sidebar">7.5</span></li>
+						<li><a href="{{ url_for('servered.show', name='cloud_atlas') }}">Cloud Atlas</a><span class="rating_sidebar">7.4</span></li>
 					</ul>
 				</div>
 			</div>
@@ -134,7 +134,7 @@
 				<p>Be the first one to review this movie!</p>
 				{% endif %}
 				<div class="send">	
-					<form method="post" action="/show/cloud_atlas" id="review">
+					<form method="post" action="{{ url_for('servered.show', name='cloud_atlas') }}" id="review">
 						<input type="text" name="review_name" placeholder="Your first name">
 						<textarea name="review_text"></textarea>
 						<input class="btn" type="submit" value="Send">
