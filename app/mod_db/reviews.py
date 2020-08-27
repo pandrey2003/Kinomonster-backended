@@ -13,7 +13,7 @@ def post_review(movie, name, contents):
 
 def gather_review():
     path = request.path
-    movie = path[6:].title()
+    movie = path[6:].replace("_", " ").title()
     if request.method == "POST":
         name = request.form["review_name"]
         contents = request.form["review_text"]

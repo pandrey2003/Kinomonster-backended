@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/htm" charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Register</title>
+	<title>The Walking Dead</title>
 	<meta name="description" content="Kinomonster is a movie website" />
 	<meta name="keywords" content="movies, films, movies online, serial, series, hd" />
 	<!-- Latest compiled and minified CSS -->
@@ -48,11 +48,14 @@
 			<div class="menubar">
 				<ul class="menu">
 					<li><a href="{{ url_for('home') }}">Home</a></li>	
-					<li><a href="{{ url_for('frontended.films') }}">Movies</a></li>
-					<li><a href="{{ url_for('frontended.serial') }}">Serials</a></li>
+					<li class="selected"><a href="{{ url_for('frontended.films') }}">Movies</a></li>
+					<li><a href="/">Serials</a></li>
 					<li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
-					<li class="selected"><a href="{{ url_for('servered.contact') }}">Contact</a></li>
+					<li><a href="{{ url_for('servered.contact') }}">Contact</a></li>
 				</ul>
+			</div>
+			<div class="sidebar_button">
+				<a href="/"></a>
 			</div>
 		</div>
 		<!--- - - - - - - - Start sidebar - - - - - -->
@@ -98,32 +101,43 @@
 						<li><a href="{{ url_for('servered.cloud_atlas') }}">Cloud Atlas</a><span class="rating_sidebar">7.4</span></li>
 					</ul>
 				</div>
-				<div class="sidebar_button">
-					<a href="/"></a>
-				</div>
 			</div>
 			<!--- - - - - - - - Start main content - - - - - -->
 			<div class="content">
-				<h1>Sign up</h1>
-				<p>Your email will be used only for restoring the password.</p>
-				{% with messages = get_flashed_messages() %}
-				{% if messages %}
-					{% for message in messages %}
-						{% if message.startswith("Email with your credentials is sent to") %}
-							<p><b>{{ message }}</b></p>
-						{% else %}
-							<p><b>{{ message }}</b></p>
-						{% endif %}
+				<h1>The Walking Dead</h1>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/R1v0uFms68U" frameborder="0" allowfullscreen></iframe>
+				<div class="info_film_page">
+					<span class="label">Rating: </span><span class="value">7.2 / 10</span>
+					<span class="label">Year: </span><span class="value">2010</span>
+					<span class="label">Filmmaker: </span><span class="value">Frank Darabont</span>
+				</div>
+				<hr>	
+				<h2>Description</h2>
+				<div class="descriptions_film">
+					<img src="{{ url_for('static', filename='img/dead.png') }}">
+					Christopher Nolan’s "Interstellar," about astronauts traveling to the other end of the galaxy to find a new home to replace humanity’s despoiled home-world, is frantically busy and earsplittingly loud.
+				</div>
+				<hr>
+				<h2>Reviews</h2>
+				{% if reviews %}
+					{% for review in reviews %}
+						<div class="reviews">
+							<div class="review_name">
+								{{ review.fname }}
+							</div>
+							<div class="review_text">
+								{{ review.contents }}
+							</div>
+						</div>
 					{% endfor %}
+				{% else %}
+				<p>Be the first one to review this movie!</p>
 				{% endif %}
-				{% endwith %}
-				<div class="send send_contact">	
-					<form method="post" action="/signup" id="contact">
-						<input type="text" name="new_login" placeholder="Your new login">
-						<input type="text" name="new_email" placeholder="Your email">
-						<input type="password" name="new_password" placeholder="Your password" style="width: 500px">
-						<p></p>
-						<input class="btn" type="submit" value="Send" style="margin-left: 430px">
+				<div class="send">	
+					<form method="post" action="/show/walking_dead" id="review">
+						<input type="text" name="review_name" placeholder="Your first name">
+						<textarea name="review_text"></textarea>
+						<input class="btn" type="submit" value="Send">
 					</form>
 				</div>
 			</div>
