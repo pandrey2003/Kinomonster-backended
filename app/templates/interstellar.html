@@ -69,6 +69,12 @@
 					</form>
 				</div>
 				<div class="sidebar">
+					{% if user_session and user_session.get("logged_in") %}
+					<h2>User authenticated</h2>
+					<form method="post" action="/server/logout">
+						<input type="submit" value="Log out" />
+					</form>
+					{% else %}
 					<h2>Sign in</h2>
 					<form method="post" action="/server/signin" id="login">
 						<input type="text" name="login_field" placeholder="Login" />
@@ -78,6 +84,7 @@
 							<span><a href="{{ url_for('servered.forgot') }}">Forgot password?</a></span> | <span><a href="{{ url_for('servered.signup') }}">Sign up</a></span>
 						</div>
 					</form>
+					{% endif %}
 				</div>
 				<div class="sidebar">
 					<h2>News</h2>

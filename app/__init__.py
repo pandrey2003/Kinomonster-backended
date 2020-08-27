@@ -12,7 +12,7 @@ app.register_blueprint(servered)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", user_session=user_session)
 
 
 @app.errorhandler(404)

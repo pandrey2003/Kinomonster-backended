@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from .servered import user_session
 
 frontended = Blueprint(
     "frontended",
@@ -10,19 +11,19 @@ frontended = Blueprint(
 
 @frontended.route("/films")
 def films():
-    return render_template("films.html")
+    return render_template("films.html", user_session=user_session)
 
 
 @frontended.route("/serial")
 def serial():
-    return render_template("serial.html")
+    return render_template("serial.html", user_session=user_session)
 
 
 @frontended.route("/rating")
 def rating():
-    return render_template("rating.html")
+    return render_template("rating.html", user_session=user_session)
 
 
 @frontended.route("/interstellar")
 def interstellar():
-    return render_template("interstellar.html")
+    return render_template("interstellar.html", user_session=user_session)

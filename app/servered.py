@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 
-import app.mod_db.signingup as signingup
+from app.mod_db import signingup
 from app.mod_db.signingup import session, Members
 
-import app.mod_db.signingin as signingin
+from app.mod_db import signingin
 from app.mod_db.signingin import user_session
 
 servered = Blueprint(
@@ -16,7 +16,7 @@ servered = Blueprint(
 
 @servered.route("/contact")
 def contact():
-    return render_template("contact.html")
+    return render_template("contact.html", user_session=user_session)
 
 
 @servered.route("/signup", methods=["GET", "POST"])
@@ -31,7 +31,7 @@ def signup():
             login=new_login,
             password=new_password
         )
-    return render_template("signup.html")
+    return render_template("signup.html", user_session=user_session)
 
 
 @servered.route("/server/signin", methods=["POST"])
@@ -50,4 +50,4 @@ def server_logout():
 
 @servered.route("/forgot")
 def forgot():
-    return render_template("forgot.html")
+    return render_template("forgot.html", user_session=user_session)
