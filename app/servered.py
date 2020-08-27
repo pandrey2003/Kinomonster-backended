@@ -6,7 +6,7 @@ from app.mod_db.signingup import session, Members
 from app.mod_db import signingin
 from app.mod_db.signingin import user_session
 
-from app.mod_db.reviews import get_reviews, post_review
+from app.mod_db.reviews import gather_review
 
 servered = Blueprint(
     "servered",
@@ -57,12 +57,5 @@ def forgot():
 
 @servered.route("/show/interstellar", methods=["POST", "GET"])
 def interstellar():
-    path = request.path
-    movie = path[6:].title()
-    if request.method == "POST":
-        name = request.form["review_name"]
-        contents = request.form["review_text"]
-        post_review(movie, name, contents)
-
-    reviews = get_reviews(movie)
+    reviews = gather_review()
     return render_template("shows/interstellar.html", user_session=user_session, reviews=reviews)
