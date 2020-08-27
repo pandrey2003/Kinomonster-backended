@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/htm" charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>"Interstellar"</title>
+	<title>Interstellar</title>
 	<meta name="description" content="Kinomonster is a movie website" />
 	<meta name="keywords" content="movies, films, movies online, serial, series, hd" />
 	<!-- Latest compiled and minified CSS -->
@@ -95,7 +95,7 @@
 				<div class="sidebar">
 					<h2>Movie ratings</h2>
 					<ul>
-						<li><a href="{{ url_for('frontended.interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
+						<li><a href="{{ url_for('servered.interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
 						<li><a href="/">Matrix</a><span class="rating_sidebar">8.0</span></li>
 						<li><a href="/">Mad Max</a><span class="rating_sidebar">7.5</span></li>
 						<li><a href="/">Cloud Atlas</a><span class="rating_sidebar">7.4</span></li>
@@ -119,24 +119,18 @@
 				</div>
 				<hr>
 				<h2>Reviews</h2>
-				<div class="reviews">
-					<div class="review_name">
-						Sergei
+				{% for review in reviews %}
+					<div class="reviews">
+						<div class="review_name">
+							{{ review.fname }}
+						</div>
+						<div class="review_text">
+							{{ review.contents }}
+						</div>
 					</div>
-					<div class="review_text">
-						A fascinating movie with a psychologically thrilling end.
-					</div>
-				</div>
-				<div class="reviews">
-					<div class="review_name">
-						James
-					</div>
-					<div class="review_text">
-						I'm raving about the filmmaker, the best movie ever!
-					</div>
-				</div>
+				{% endfor %}
 				<div class="send">	
-					<form method="post" action="#" id="review">
+					<form method="post" action="/server/review" id="review">
 						<input type="text" name="review_name" placeholder="Your first name">
 						<textarea name="review_text"></textarea>
 						<input class="btn" type="submit" value="Send">

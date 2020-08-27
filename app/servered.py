@@ -6,6 +6,8 @@ from app.mod_db.signingup import session, Members
 from app.mod_db import signingin
 from app.mod_db.signingin import user_session
 
+from app.mod_db.reviews import get_reviews
+
 servered = Blueprint(
     "servered",
     __name__,
@@ -51,3 +53,11 @@ def server_logout():
 @servered.route("/forgot")
 def forgot():
     return render_template("forgot.html", user_session=user_session)
+
+
+@servered.route("/show/interstellar")
+def interstellar():
+    path = request.path
+    movie = path[6:].title()
+    reviews = get_reviews(movie)
+    return render_template("shows/interstellar.html", user_session=user_session, reviews=reviews)

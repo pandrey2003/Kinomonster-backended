@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from .servered import user_session
 
 frontended = Blueprint(
@@ -22,8 +22,3 @@ def serial():
 @frontended.route("/rating")
 def rating():
     return render_template("rating.html", user_session=user_session)
-
-
-@frontended.route("/interstellar")
-def interstellar():
-    return render_template("interstellar.html", user_session=user_session)
