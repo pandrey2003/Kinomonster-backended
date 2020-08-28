@@ -23,7 +23,7 @@ def contact():
     if request.method == "POST":
         name = request.form["review_name"]
         email = request.form["review_email"]
-        contents = request.form["review_email"]
+        contents = request.form["review_text"]
         contact_mail(name, email, contents)
     return render_template("contact.html", user_session=user_session)
 
