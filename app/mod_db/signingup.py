@@ -45,6 +45,7 @@ def send_email(email, login, password):
         sender_password = decrypt_password(encrypted_pwd)
     except FileNotFoundError:
         sender_email = input("Enter your gmail: ")
+        print("Grant access to apps in your account!")
         sender_password = getpass()
     else:
         sender_email = "kinomonsterbackend@gmail.com"
