@@ -106,8 +106,15 @@
 			<div class="content">
 				<h1>Contact us</h1>
 				<p>Drop us a line about Kinomonster, or simply say Hi!</p>
+				{% with messages = get_flashed_messages(category_filter=["contact"]) %}
+				{% if messages %}
+					{% for message in messages %}
+						<p><b>{{ message }}</b></p>
+					{% endfor %}
+				{% endif %}
+				{% endwith %}
 				<div class="send send_contact">	
-					<form method="post" action="#" id="contact">
+					<form method="post" action="/contact" id="contact">
 						<input type="text" name="review_name" placeholder="Your first name">
 						<input type="text" name="review_email" placeholder="Your email">
 						<textarea name="review_text"></textarea>

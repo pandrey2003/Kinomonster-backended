@@ -8,6 +8,8 @@ from app.mod_db.signingin import user_session
 
 from app.mod_db.reviews import gather_review
 
+from app.mod_db.contact import contact_mail
+
 servered = Blueprint(
     "servered",
     __name__,
@@ -16,8 +18,13 @@ servered = Blueprint(
 )
 
 
-@servered.route("/contact")
+@servered.route("/contact", methods=["GET", "POST"])
 def contact():
+    if request.method == "POST":
+        name = request.form["review_name"]
+        email = request.form["review_email"]
+        contents = request.form["review_email"]
+        contact_mail(name, email, contents)
     return render_template("contact.html", user_session=user_session)
 
 
