@@ -37,4 +37,3 @@ def contact_mail(name, email, contents):
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, receiver_email, message)
     flash(f"If necessary, we may contact you on {email}", "contact")
-    
