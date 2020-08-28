@@ -155,6 +155,22 @@
 	<!--- - - - - - - - Include all compiled plugins (below), or include individual files as needed - - - - - -->
 	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='libs/bootstrap/js/toolkit.min.js') }}"></script>
-
+	{% with messages = get_flashed_messages(category_filter=["js"]) %}
+	{% if messages %}
+		<script>
+			function sleep (time) {
+              return new Promise((resolve) => setTimeout(resolve, time));
+			}
+			document.addEventListener("DOMContentLoaded", () => {
+				sleep(350).then(() => {
+    				var messages = {{ messages | safe}};
+			    	for (var i=0; i<messages.length; i++) {
+        	          alert(messages[i]);
+					}
+				});
+  			});
+		</script>
+	{% endif %}
+	{% endwith %}
 </body>
 </html>

@@ -6,7 +6,7 @@ from app.mod_db.signingup import session, Members
 from app.mod_db import signingin
 from app.mod_db.signingin import user_session
 
-from app.mod_db.reviews import gather_review
+from app.mod_db.reviews import get_reviews, post_review
 
 from app.mod_db.contact import contact_mail
 
@@ -49,13 +49,13 @@ def server_signin():
     login = request.form["login_field"]
     password = request.form["password_field"]
     signingin.signin(login, password)
-    return redirect(url_for("home"))
+    return redirect(request.referrer)
 
 
 @servered.route("/server/logout", methods=["POST"])
 def server_logout():
     signingin.logout()
-    return redirect(url_for("home"))
+    return redirect(request.referrer)
 
 
 @servered.route("/forgot", methods=["GET", "POST"])
@@ -68,5 +68,11 @@ def forgot():
 
 @servered.route("/show/<name>", methods=["POST", "GET"])
 def show(name):
-    reviews = gather_review()
+    path = request.path
+    movie = path[6:].replace("_", " ").title()
+    if request.method == "POST":
+        name = request.form["review_name"]
+        contents = request.form["review_text"]
+        post_review(movie, name, contents)
+    reviews = get_reviews(movie)
     return render_template(f"shows/{name}.html", user_session=user_session, reviews=reviews)
