@@ -106,6 +106,13 @@
 			<div class="content">
 				<h1>Restore password</h1>
 				<p>A new password will be sent on your email.</p>
+				{% with messages = get_flashed_messages(category_filter=["forgot"]) %}
+				{% if messages %}
+					{% for message in messages %}
+						<p><b>{{ message }}</b></p>
+					{% endfor %}
+				{% endif %}
+				{% endwith %}
 				<div class="send send_contact">	
 					<form method="post" action="#" id="contact">
 						<input type="text" name="forgot_email" placeholder="Your email">

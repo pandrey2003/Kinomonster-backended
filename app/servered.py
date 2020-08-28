@@ -10,6 +10,7 @@ from app.mod_db.reviews import gather_review
 
 from app.mod_db.contact import contact_mail
 
+from app.mod_db.forgot import restore_password
 servered = Blueprint(
     "servered",
     __name__,
@@ -57,8 +58,11 @@ def server_logout():
     return redirect(url_for("home"))
 
 
-@servered.route("/forgot")
+@servered.route("/forgot", methods=["GET", "POST"])
 def forgot():
+    if request.method == "POST":
+        email = request.form["forgot_email"]
+        restore_password(email)
     return render_template("forgot.html", user_session=user_session)
 
 

@@ -1,4 +1,4 @@
-from flask import render_template, flash
+from flask import flash
 
 from cryptography.fernet import Fernet
 from getpass import getpass
@@ -52,9 +52,8 @@ def send_email(email, login, password):
     finally:
         receiver_email = email
         message = f"""\
-        Subject: Kinomonster post-signup email
+        Subject: Your credentials
 
-        Welcome to our lovely community!
         Your credentials for Kinomonster:
             login: {login}
             password: {password}
