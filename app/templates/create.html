@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block title %}Write your post{% endblock %}
+{% block selected %}
+<li><a href="{{ url_for('servered.home') }}">Home</a></li>	
+<li><a href="{{ url_for('frontended.films') }}">Movies</a></li>
+<li><a href="{{ url_for('servered.posts') }}">Posts</a></li>
+<li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
+<li><a href="{{ url_for('servered.contact') }}">Contact</a></li>
+{% endblock %}
+{% block contents %}
+{% endblock %}

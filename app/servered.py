@@ -38,6 +38,17 @@ def post(post_id):
     return render_template("post.html", user_session=user_session, post=needed_post)
 
 
+@servered.route("/posts")
+def posts():
+    all_posts = get_posts()
+    return render_template("posts.html", user_session=user_session, posts=all_posts)
+
+
+@servered.route("/create/post")
+def create_post():
+    return render_template("create.html", user_session=user_session)
+
+
 @servered.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":

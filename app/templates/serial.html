@@ -1,9 +1,9 @@
 {% extends "index.html" %}
-{% block title %}Serials{% endblock %}
+{% block title %}Posts{% endblock %}
 {% block selected %}
 <li><a href="{{ url_for('servered.home') }}">Home</a></li>	
 <li><a href="{{ url_for('frontended.films') }}">Movies</a></li>
-<li class="selected"><a href="{{ url_for('frontended.serial') }}">Serials</a></li>
+<li class="selected"><a href="{{ url_for('servered.posts') }}">Posts</a></li>
 <li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
 <li><a href="{{ url_for('servered.contact') }}">Contact</a></li>
 {% endblock %}
