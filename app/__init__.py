@@ -1,18 +1,13 @@
 from flask import Flask, render_template
 
 from .frontended import frontended
-from .servered import servered, user_session
+from .servered import servered
 
 app = Flask(__name__)
 app.config.from_object("config")
 
 app.register_blueprint(frontended)
 app.register_blueprint(servered)
-
-
-@app.route("/")
-def home():
-    return render_template("index.html", user_session=user_session)
 
 
 @app.errorhandler(404)

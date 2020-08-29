@@ -9,6 +9,11 @@ frontended = Blueprint(
 )
 
 
+@frontended.route("/")
+def home():
+    return render_template("index.html", user_session=user_session)
+
+
 @frontended.route("/films")
 def films():
     return render_template("films.html", user_session=user_session)
