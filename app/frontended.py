@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template
+
 from .servered import user_session
+
 
 frontended = Blueprint(
     "frontended",
@@ -7,11 +9,6 @@ frontended = Blueprint(
     template_folder="templates",
     static_folder="static"
 )
-
-
-@frontended.route("/")
-def home():
-    return render_template("index.html", user_session=user_session)
 
 
 @frontended.route("/films")

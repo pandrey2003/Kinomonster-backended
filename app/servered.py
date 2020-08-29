@@ -11,12 +11,31 @@ from app.mod_db.contact import contact_mail
 
 from app.mod_db.forgot import restore_password
 
+from app.mod_db.posts import get_posts_for_home, get_posts
+
 servered = Blueprint(
     "servered",
     __name__,
     template_folder="templates",
     static_folder="static"
 )
+
+
+@servered.route("/")
+def home():
+    home_posts = get_posts_for_home()
+    return render_template(
+        "index.html",
+        user_session=user_session,
+        posts=home_posts
+    )
+
+
+@servered.route("/posts/<int:post_id>")
+def post(post_id):
+    all_posts = get_posts()
+    needed_post = all_posts[post_id]
+    return render_template("post.html", user_session=user_session, post=needed_post)
 
 
 @servered.route("/contact", methods=["GET", "POST"])
