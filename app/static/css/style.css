@@ -152,6 +152,7 @@ hr {
   border: solid 1px #f2f2f2;
   border-radius: 5px;
   background-color: #f9f9f9;
+  padding-top: 0px;
 }
 
 .btn {
@@ -292,7 +293,8 @@ hr {
   margin-bottom: 5%;
   background-color: #f9f9f9;
   padding: 5%;
-  height: 270px;
+  display: block;
+  overflow: auto;
 }
 
 .info_film img {
@@ -309,7 +311,6 @@ hr {
   color: white;
   border-radius: 5px;
   float: right;
-  margin-top: 5%;
   clear: both;
   font-size: 0.9em;
   width: 80px;

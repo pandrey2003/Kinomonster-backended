@@ -34,6 +34,9 @@
 	<script src="{{ url_for('static', filename='js/modernizr.js') }}"></script> <!-- Modernizr -->
 	<script src="{{ url_for('static', filename='js/slippry.js') }}"></script> <!-- slideshow -->
 	<script src="{{ url_for('static', filename='js/typed.js') }}"></script> <!-- type ani -->
+
+	<!-- Added by Andrew Polukhin to override bootstrap.min.css for p -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
 </head>
 <body>
 	<!--- - - - - - - - Start Menubar - - - - - -->
@@ -53,9 +56,6 @@
 					<li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
 					<li><a href="{{ url_for('servered.contact') }}">Contact</a></li>
 				</ul>
-			</div>
-			<div class="sidebar_button">
-				<a href="/"></a>
 			</div>
 		</div>
 		<!--- - - - - - - - Start sidebar - - - - - -->

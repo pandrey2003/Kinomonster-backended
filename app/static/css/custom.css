@@ -1,3 +1,7 @@
 .posts .posts_content p {
     font-size: 1.25em;
 }
+
+h2 {
+    margin-top: 5px;
+}
