@@ -1,178 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="content-type" content="text/htm" charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Register</title>
-	<meta name="description" content="Kinomonster is a movie website" />
-	<meta name="keywords" content="movies, films, movies online, serial, series, hd" />
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/media-queries.css') }}">
-
-	<!-- Slippry: A Free jQuery Responsive Slider Plugin for Modern Times -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/slippry.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css.map') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css.map') }}">
-
-	<!-- Include the CSS -->
-	<link href="dist/toolkit.min.css" rel="stylesheet">
-
-	<script src="{{ url_for('static', filename='libs/bootstrap/js/*') }}"></script>
-	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/preloader.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/modernizr.js') }}"></script> <!-- Modernizr -->
-	<script src="{{ url_for('static', filename='js/slippry.js') }}"></script> <!-- slideshow -->
-	<script src="{{ url_for('static', filename='js/typed.js') }}"></script> <!-- type ani -->
-</head>
-<body>
-	<!--- - - - - - - - Start Menubar - - - - - -->
-	<div class="main">
-		<div class="header">
-			<div class="logo">
-				<div class="logo_text">
-					<h1><a href="{{ url_for('home') }}">Kinomonster</a></h1>
-					<h2>Movies are our passion!</h2>
-				</div>
-			</div>
-			<div class="menubar">
-				<ul class="menu">
-					<li><a href="{{ url_for('home') }}">Home</a></li>	
-					<li><a href="{{ url_for('frontended.films') }}">Movies</a></li>
-					<li><a href="{{ url_for('frontended.serial') }}">Serials</a></li>
-					<li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
-					<li class="selected"><a href="{{ url_for('servered.contact') }}">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-		<!--- - - - - - - - Start sidebar - - - - - -->
-		<div class="site_content">
-			<div class="sidebar_container">
-				<div class="sidebar">
-					<h2>Search</h2>
-					<form method="post" action="/server/search" id="search_form" >
-						<input type="search" name="search_field" placeholder="Your query" />
-						<input type="submit" class="btn" value="Search" />
-					</form>
-				</div>
-				<div class="sidebar">
-					{% if user_session and user_session.get("logged_in") %}
-					<h2>User authenticated</h2>
-					<form method="post" action="/server/logout">
-						<input type="submit" value="Log out" />
-					</form>
-					{% else %}
-					<h2>Sign in</h2>
-					<form method="post" action="/server/signin" id="login">
-						<input type="text" name="login_field" placeholder="Login" />
-						<input type="password" name="password_field" placeholder="Password" />
-						<input type="submit" class="btn" value="Sign in" />
-						<div class="lables_passreg_text">
-							<span><a href="{{ url_for('servered.forgot') }}">Forgot password?</a></span> | <span><a href="{{ url_for('servered.signup') }}">Sign up</a></span>
-						</div>
-					</form>
-					{% endif %}
-				</div>
-				<div class="sidebar">
-					<h2>News</h2>
-					<span>31.02.2018</span>
-					<p>We launched extended search.</p>
-					<a href="/">Read</a>
-				</div>
-				<div class="sidebar">
-					<h2>Movie ratings</h2>
-					<ul>
-						<li><a href="{{ url_for('servered.show', name='interstellar') }}">Interstellar</a><span class="rating_sidebar">8.1</span></li>
-						<li><a href="{{ url_for('servered.show', name='matrix') }}">Matrix</a><span class="rating_sidebar">8.0</span></li>
-						<li><a href="{{ url_for('servered.show', name='mad_max') }}">Mad Max</a><span class="rating_sidebar">7.5</span></li>
-						<li><a href="{{ url_for('servered.show', name='cloud_atlas') }}">Cloud Atlas</a><span class="rating_sidebar">7.4</span></li>
-					</ul>
-				</div>
-				<div class="sidebar_button">
-					<a href="/"></a>
-				</div>
-			</div>
-			<!--- - - - - - - - Start main content - - - - - -->
-			<div class="content">
-				<h1>Sign up</h1>
-				<p>Your email will be used only for restoring the password.</p>
-				{% with messages = get_flashed_messages() %}
-				{% if messages %}
-					{% for message in messages %}
-						{% if message.startswith("Email with your credentials is sent to") %}
-							<p><b>{{ message }}</b></p>
-						{% else %}
-							<p><b>{{ message }}</b></p>
-						{% endif %}
-					{% endfor %}
-				{% endif %}
-				{% endwith %}
-				<div class="send send_contact">	
-					<form method="post" action="/signup" id="contact">
-						<input type="text" name="new_login" placeholder="Your new login">
-						<input type="text" name="new_email" placeholder="Your email">
-						<input type="password" name="new_password" placeholder="Your password" style="width: 500px">
-						<p></p>
-						<input class="btn" type="submit" value="Send" style="margin-left: 430px">
-					</form>
-				</div>
-			</div>
-		</div>
-		<!--- - - - - - - - Start footer - - - - - -->
-		<div class="footer">
-			<p>
-				<a href="{{ url_for('home') }}">Home</a> |
-				<a href="{{ url_for('frontended.films') }}">Movies</a> | 
-				<a href="{{ url_for('frontended.serial') }}">Serials</a> |
-				<a href="{{ url_for('frontended.rating') }}">Movie ratings</a> |
-				<a href="{{ url_for('servered.contact') }}">Contact</a>
-			</p>
-			<p>&copy Nirvanas 2017</p>
-		</div>
-	</div>
-	
-	<!--- - - - - - - - Scroll Top Panel - - - - - -->
-	<p id="back-top"><a href="#top"><span></span></a></p>
-
-	<!--- - - - - - - - Resource jQuery - - - - - -->
-	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/scrollReveal.min.js') }}"></script>
-	<!--- - - - - - - - 'defer' attribute delays script execution until the whole page is loaded - - - - - -->
-	<script src="{{ url_for('static', filename='js/parallax.js') }}" defer></script> 
-
-
-	<!--- - - - - - - - jQuery (necessary for Bootstrap's JavaScript plugins) - - - - - -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-	<!--- - - - - - - - Include all compiled plugins (below), or include individual files as needed - - - - - -->
-	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='libs/bootstrap/js/toolkit.min.js') }}"></script>
-	{% with messages = get_flashed_messages(category_filter=["js"]) %}
+{% extends "index.html" %}
+{% block title %}Sign up{% endblock %}
+{% block selected %}
+<li><a href="{{ url_for('home') }}">Home</a></li>	
+<li><a href="{{ url_for('frontended.films') }}">Movies</a></li>
+<li><a href="{{ url_for('frontended.serial') }}">Serials</a></li>
+<li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
+<li><a href="{{ url_for('servered.contact') }}">Contact</a></li>
+{% endblock %}
+{% block contents %}
+<div class="content">
+	<h1>Sign up</h1>
+	<p>Your email will be used only for restoring the password.</p>
+	{% with messages = get_flashed_messages() %}
 	{% if messages %}
-		<script>
-			function sleep (time) {
-              return new Promise((resolve) => setTimeout(resolve, time));
-			}
-			document.addEventListener("DOMContentLoaded", () => {
-				sleep(350).then(() => {
-    				var messages = {{ messages | safe}};
-			    	for (var i=0; i<messages.length; i++) {
-        	          alert(messages[i]);
-					}
-				});
-  			});
-		</script>
+		{% for message in messages %}
+			{% if message.startswith("Email with your credentials is sent to") %}
+				<p><b>{{ message }}</b></p>
+			{% else %}
+				<p><b>{{ message }}</b></p>
+			{% endif %}
+		{% endfor %}
 	{% endif %}
 	{% endwith %}
-</body>
-</html>
+	<div class="send send_contact">	
+		<form method="post" action="/signup" id="contact">
+			<input type="text" name="new_login" placeholder="Your new login">
+			<input type="text" name="new_email" placeholder="Your email">
+			<input type="password" name="new_password" placeholder="Your password" style="width: 500px">
+			<p></p>
+			<input class="btn" type="submit" value="Send" style="margin-left: 430px">
+		</form>
+	</div>
+</div>
+{% endblock %}

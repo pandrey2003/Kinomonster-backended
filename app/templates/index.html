@@ -7,7 +7,7 @@
 	<meta name="description" content="Kinomonster is a movie website" />
 	<meta name="keywords" content="movies, films, movies online, serial, series, hd" />
 	<!-- <meta name="revisit-after" content="1 days" />  <- Use existing sitemap.xml -->
-	<title>Home</title>
+	<title>{% block title %}Home{% endblock %}</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -52,11 +52,13 @@
 			</div>
 			<div class="menubar">
 				<ul class="menu">
+					{% block selected %}
 					<li class="selected"><a href="{{ url_for('home') }}">Home</a></li>	
 					<li><a href="{{ url_for('frontended.films') }}">Movies</a></li>
 					<li><a href="{{ url_for('frontended.serial') }}">Serials</a></li>
 					<li><a href="{{ url_for('frontended.rating') }}">Movie ratings</a></li>
 					<li><a href="{{ url_for('servered.contact') }}">Contact</a></li>
+					{% endblock %}
 				</ul>
 			</div>
 		</div>
@@ -108,6 +110,7 @@
 				</div>
 			</div>
 			<!--- - - - - - - - Start main content - - - - - -->
+			{% block contents %}
 			<div class="content">
 				<h1>New movies</h1>
 				<div class="films_block">
@@ -141,6 +144,7 @@
 					<hr>
 				</div>
 			</div>
+			{% endblock %}
 		</div>
 		<!--- - - - - - - - Start footer - - - - - -->
 		<div class="footer">
