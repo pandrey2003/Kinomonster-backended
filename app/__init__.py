@@ -13,3 +13,8 @@ app.register_blueprint(servered)
 @app.errorhandler(404)
 def not_found(error):
     return render_template("errors/404.html"), 404
+
+
+@app.errorhandler(405)
+def method_not_allowed(error):
+    return render_template("errors/405.html"), 405
