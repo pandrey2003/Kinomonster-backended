@@ -19,3 +19,8 @@ def films():
 @frontended.route("/rating")
 def rating():
     return render_template("rating.html", user_session=user_session)
+
+
+@frontended.route("/about")
+def about():
+    return render_template("about.html", user_session=user_session)
