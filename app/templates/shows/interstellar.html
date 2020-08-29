@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/htm" charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Interstellar</title>
+	<title>{% block title %}Interstellar{% endblock %}</title>
 	<meta name="description" content="Kinomonster is a movie website" />
 	<meta name="keywords" content="movies, films, movies online, serial, series, hd" />
 	<!-- Latest compiled and minified CSS -->
@@ -104,18 +104,24 @@
 			</div>
 			<!--- - - - - - - - Start main content - - - - - -->
 			<div class="content">
-				<h1>Interstellar</h1>
+				<h1>{% block h1 %}Interstellar{% endblock %}</h1>
+				{% block video %}
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/zSWdZVtXT7E" frameborder="0" allowfullscreen></iframe>
+				{% endblock %}
 				<div class="info_film_page">
-					<span class="label">Rating: </span><span class="value">8.1 / 10</span>
-					<span class="label">Year: </span><span class="value">2014</span>
-					<span class="label">Filmmaker: </span><span class="value">Christopher Nolan</span>
+					<span class="label">Rating: </span><span class="value">{% block rating %}8.1{% endblock %} / 10</span>
+					<span class="label">Year: </span><span class="value">{% block year %}2014{% endblock %}</span>
+					<span class="label">Filmmaker: </span><span class="value">{% block filmmaker %}Christopher Nolan{% endblock %}</span>
 				</div>
 				<hr>	
 				<h2>Description</h2>
 				<div class="descriptions_film">
+					{% block image %}
 					<img src="{{ url_for('static', filename='img/inter.png') }}">
+					{% endblock %}
+					{% block description %}
 					Christopher Nolan’s "Interstellar," about astronauts traveling to the other end of the galaxy to find a new home to replace humanity’s despoiled home-world, is frantically busy and earsplittingly loud.
+					{% endblock %}
 				</div>
 				<hr>
 				<h2>Reviews</h2>
@@ -133,8 +139,10 @@
 				{% else %}
 				<p>Be the first one to review this movie!</p>
 				{% endif %}
-				<div class="send">	
+				<div class="send">
+					{% block form %}
 					<form method="post" action="{{ url_for('servered.show', name='interstellar') }}" id="review">
+					{% endblock %}
 						<input type="text" name="review_name" placeholder="Your first name">
 						<textarea name="review_text"></textarea>
 						<input class="btn" type="submit" value="Send">
