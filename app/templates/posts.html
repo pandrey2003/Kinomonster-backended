@@ -9,10 +9,8 @@
 {% endblock %}
 {% block contents %}
 <div class="content">
-    <h3 style="text-align: center;"><i>Our members' posts</i></h3>
     <div class="posts">
         {% for post in posts %}
-            <hr>
             <h2>
                 <a href="{{ url_for('servered.post', post_id=loop.index-1) }}">{{ post.title }}</a>
             </h2>
@@ -28,8 +26,8 @@
                     <a href="{{ url_for('servered.post', post_id=loop.index-1) }}">Read</a>
                 </strong>
             </p>
+            <hr>
         {% endfor %}
-        <hr>
     </div>
     <p style="text-align: right;">You may want to <a style="color: blue;" href="{{ url_for('servered.create_post') }}">write</a> your own post!</p>
 </div>
