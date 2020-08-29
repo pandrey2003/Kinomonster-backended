@@ -1,7 +1,6 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, redirect
 
 from app.mod_db import signingup
-from app.mod_db.signingup import session, Members
 
 from app.mod_db import signingin
 from app.mod_db.signingin import user_session
@@ -11,6 +10,7 @@ from app.mod_db.reviews import get_reviews, post_review
 from app.mod_db.contact import contact_mail
 
 from app.mod_db.forgot import restore_password
+
 servered = Blueprint(
     "servered",
     __name__,
@@ -75,4 +75,9 @@ def show(name):
         contents = request.form["review_text"]
         post_review(movie, name, contents)
     reviews = get_reviews(movie)
-    return render_template(f"shows/{name}.html", user_session=user_session, reviews=reviews)
+
+    return render_template(
+        f"shows/{name}.html",
+        user_session=user_session,
+        reviews=reviews
+    )

@@ -1,5 +1,5 @@
 from app.mod_db import session, Reviews
-from flask import request
+
 
 def get_reviews(movie):
     return session.query(Reviews).filter_by(movie=movie).all()

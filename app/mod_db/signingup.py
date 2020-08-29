@@ -10,11 +10,12 @@ from app.mod_db import session, Members
 
 encrypted_pwd = b"gAAAAABfQWlFS41yLCGyGuVax6vUKl" \
         b"hubQAlylQqSSGPdVGoEwIOnRBQf3NYUPunf9RW0W32ZO5" \
-            b"KiA_jpyFX93H2StWZxJOfinJAOtqVKwF1Kq1KwTdOq3o="
+        b"KiA_jpyFX93H2StWZxJOfinJAOtqVKwF1Kq1KwTdOq3o="
 
 
 def check_login(login):
     return not bool(session.query(Members).filter_by(login=login).first())
+
 
 def sign_up(email, login, password):
     if check_email(email) and check_email_db(email) and check_login(login):

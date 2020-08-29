@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
 
 from .frontended import frontended
 from .servered import servered, user_session

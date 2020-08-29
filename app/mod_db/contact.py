@@ -1,9 +1,7 @@
 from flask import flash
-from cryptography.fernet import Fernet
 from getpass import getpass
 
 import smtplib, ssl
-import re
 
 from app.mod_db.signingup import decrypt_password, encrypted_pwd
 
