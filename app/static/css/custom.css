@@ -28,3 +28,11 @@ h2 {
     width: 10%;
     height: 10%;
 }
+
+#btn_move_right {
+    margin-left: 430px;
+}
+
+#input_pwd {
+    width: 500px;
+}
