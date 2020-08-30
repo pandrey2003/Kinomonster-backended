@@ -9,4 +9,23 @@
 <li><a href="{{ url_for('frontended.about') }}">About</a></li>
 {% endblock %}
 {% block contents %}
+{% if user_session and user_session.get("logged_in") %}
+<div class="content">
+	<h1>Write your post</h1>
+    <p>If you want to display a picture with your post, upload it using the button below.</p>
+	<div class="send send_contact">	
+		<form method="post" action="/create/post" enctype="multipart/form-data" id="contact">
+            <input id="create_name" type="text" name="post_title" placeholder="Your post's title (must be unique!)">
+            <textarea placeholder="Description to your post (optional)" name="post_description"></textarea>
+            <input type="file" name="image">
+            <p></p>
+			<textarea placeholder="Your post (try to write in HTML, for example, using &lt;p&gt;...&lt;/p&gt; for paragraphs)." name="post_contents"></textarea>
+			<p></p>
+			<input class="btn" type="submit" value="Send" id="btn_create_post">
+		</form>
+    </div>
+{% else %}
+<h2>Please, log in first to write posts</h2>
+{% endif %}
+</div>
 {% endblock %}

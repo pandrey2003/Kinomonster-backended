@@ -15,9 +15,11 @@
             <h2>
                 <a href="{{ url_for('servered.post', post_id=loop.index-1) }}">{{ post.title }}</a>
             </h2>
+            {% if post.picture %}
             <img width="100%" src="{{ url_for('static', filename='img/db_img/' + post.picture) }}">
+            <p></p>
+            {% endif %}
             <div class="posts_content">
-                <p></p>
                 <p>
                     {{ post.description }}
                 </p>

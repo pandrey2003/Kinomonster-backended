@@ -11,7 +11,7 @@ from app.mod_db.contact import contact_mail
 
 from app.mod_db.forgot import restore_password
 
-from app.mod_db.posts import get_posts_for_home, get_posts, release_cache
+from app.mod_db.posts import get_posts_for_home, get_posts, upload
 
 servered = Blueprint(
     "servered",
@@ -47,9 +47,14 @@ def posts():
     return render_template("posts.html", user_session=user_session, posts=all_posts)
 
 
-@servered.route("/create/post")
+@servered.route("/create/post", methods=["GET", "POST"])
 def create_post():
-    release_cache()
+    if request.method == "POST" and "image" in request.files:
+        image = request.files["image"]
+        title = request.form["post_title"]
+        description = request.form["post_description"]
+        contents = request.form["post_contents"]
+        upload(title=title, image=image, description=description, contents=contents)
     return render_template("create.html", user_session=user_session)
 
 
@@ -100,7 +105,7 @@ def forgot():
     return render_template("forgot.html", user_session=user_session)
 
 
-@servered.route("/show/<name>", methods=["POST", "GET"])
+@servered.route("/show/<name>", methods=["GET", "POST"])
 def show(name):
     path = request.path
     movie = path[6:].replace("_", " ").title()

@@ -14,9 +14,11 @@
             <h2>
                 {{ post.title }}
             </h2>
+            {% if post.picture %}
             <img width="100%" src="{{ url_for('static', filename='img/db_img/' + post.picture) }}">
+            <p></p>
+            {% endif %}
             <div class="posts_content">
-                <p></p>
                     {{ post.contents | safe }}
                 <p><i>Written by {{ post.author }}</i></p>
                 {% if post.resource %}

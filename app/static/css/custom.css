@@ -36,3 +36,11 @@ h2 {
 #input_pwd {
     width: 500px;
 }
+
+#btn_create_post {
+    margin-left: 450px;
+}
+
+#create_name {
+    width: 516px;
+}
