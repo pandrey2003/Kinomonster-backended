@@ -18,6 +18,7 @@
             <div class="posts_content">
                 <p></p>
                     {{ post.contents | safe }}
+                <p><i>Written by {{ post.author }}</i></p>
                 {% if post.resource %}
                 <p></p>
                 <p id="after_post"><a href="{{ post.resource }}">Resource</a></p>
