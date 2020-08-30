@@ -9,3 +9,22 @@ h2 {
 #forgot_input {
     margin-bottom: 0%;
 }
+
+#after_post {
+    text-align: right;
+}
+
+#in_blue {
+    color: blue;
+}
+
+.for_img_divs {
+    display: inline-block;
+}
+
+.info_img_cont img {
+    float: left;
+    margin: 5px;
+    width: 10%;
+    height: 10%;
+}
