@@ -166,7 +166,7 @@
 	
 	<!--- - - - - - - - Scroll Top Panel - - - - - -->
 	<p id="back-top"><a href="#top"><span></span></a></p>
-	{% with messages = get_flashed_messages(category_filter=["js"]) %}
+	{% with messages = get_flashed_messages(category_filter=["js", "implementation"]) %}
 	{% if messages %}
 		<script>
 			function sleep (time) {

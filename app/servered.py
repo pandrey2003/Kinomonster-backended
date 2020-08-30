@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, flash
 
 from app.mod_db import signingup
 
@@ -133,3 +133,9 @@ def show(name):
         user_session=user_session,
         reviews=reviews
     )
+
+
+@servered.route("/server/search", methods=["POST"])
+def search():
+    flash("This feature is coming soon...", "implementation")
+    return redirect(request.referrer)
