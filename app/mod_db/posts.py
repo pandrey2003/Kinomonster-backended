@@ -1,5 +1,4 @@
 import os
-from flask import request
 from cachetools import cached, TTLCache
 from werkzeug.utils import secure_filename
 
