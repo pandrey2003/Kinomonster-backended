@@ -11,7 +11,7 @@ from app.mod_db.contact import contact_mail
 
 from app.mod_db.forgot import restore_password
 
-from app.mod_db.posts import get_posts_for_home, get_posts
+from app.mod_db.posts import get_posts_for_home, get_posts, release_cache
 
 servered = Blueprint(
     "servered",
@@ -49,6 +49,7 @@ def posts():
 
 @servered.route("/create/post")
 def create_post():
+    release_cache()
     return render_template("create.html", user_session=user_session)
 
 
