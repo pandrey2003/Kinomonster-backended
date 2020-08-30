@@ -12,6 +12,7 @@ flask = "*"
 flask-sqlalchemy = "*"
 cryptography = "*"
 sqlalchemy = "*"
+cachetools = "*"
 
 [requires]
 python_version = "3.8"
