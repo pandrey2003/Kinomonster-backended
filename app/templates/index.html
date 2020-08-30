@@ -167,19 +167,6 @@
 	<!--- - - - - - - - Scroll Top Panel - - - - - -->
 	<p id="back-top"><a href="#top"><span></span></a></p>
 
-	<!--- - - - - - - - Resource jQuery - - - - - -->
-	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/scrollReveal.min.js') }}"></script>
-	<!--- - - - - - - - 'defer' attribute delays script execution until the whole page is loaded - - - - - -->
-	<script src="{{ url_for('static', filename='js/parallax.js') }}" defer></script> 
-
-
-	<!--- - - - - - - - jQuery (necessary for Bootstrap's JavaScript plugins) - - - - - -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-	<!--- - - - - - - - Include all compiled plugins (below), or include individual files as needed - - - - - -->
-	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='libs/bootstrap/js/toolkit.min.js') }}"></script>
 	{% with messages = get_flashed_messages(category_filter=["js"]) %}
 	{% if messages %}
 		<script>
