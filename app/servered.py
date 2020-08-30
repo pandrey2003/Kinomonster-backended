@@ -34,8 +34,11 @@ def home():
 @servered.route("/posts/<int:post_id>")
 def post(post_id):
     all_posts = get_posts()
-    needed_post = all_posts[post_id]
-    return render_template("post.html", user_session=user_session, post=needed_post)
+    try:
+        needed_post = all_posts[post_id]
+        return render_template("post.html", user_session=user_session, post=needed_post)
+    except IndexError:
+        return render_template("errors/404.html"), 404
 
 
 @servered.route("/posts")
