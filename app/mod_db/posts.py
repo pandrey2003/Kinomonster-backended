@@ -5,7 +5,6 @@ from werkzeug.utils import secure_filename
 
 from app.mod_db import session, Posts
 from config import UPLOAD_FOLDER
-from app.mod_db import session, Posts
 from app.mod_db.signingin import user_session
 
 cache = TTLCache(maxsize=float("inf"), ttl=900)
@@ -74,7 +73,6 @@ def upload_without_picture(title, description, contents):
     )
     session.add(new_post)
     session.commit()
-
 
 
 def upload_with_picture(title, filename, description, contents):

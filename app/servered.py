@@ -36,7 +36,11 @@ def post(post_id):
     all_posts = get_posts()
     try:
         needed_post = all_posts[post_id]
-        return render_template("post.html", user_session=user_session, post=needed_post)
+        return render_template(
+            "post.html",
+            user_session=user_session,
+            post=needed_post
+        )
     except IndexError:
         return render_template("errors/404.html"), 404
 
@@ -44,7 +48,11 @@ def post(post_id):
 @servered.route("/posts")
 def posts():
     all_posts = get_posts()
-    return render_template("posts.html", user_session=user_session, posts=all_posts)
+    return render_template(
+        "posts.html",
+        user_session=user_session,
+        posts=all_posts
+    )
 
 
 @servered.route("/create/post", methods=["GET", "POST"])
@@ -54,7 +62,12 @@ def create_post():
         title = request.form["post_title"]
         description = request.form["post_description"]
         contents = request.form["post_contents"]
-        upload(title=title, image=image, description=description, contents=contents)
+        upload(
+            title=title,
+            image=image,
+            description=description,
+            contents=contents
+        )
     return render_template("create.html", user_session=user_session)
 
 

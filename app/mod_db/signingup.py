@@ -58,7 +58,7 @@ def send_email(email, login, password):
         Your credentials for Kinomonster:
             login: {login}
             password: {password}
-        
+
         We are looking forward to seeing you!
         """
 
