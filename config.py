@@ -25,5 +25,5 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 SECRET_KEY = b'\x82\xbf\x18\x9e\x91o\xc4\xbb\xd8b\xe7\x18\xab\x82\x1d'
 
 # Specify the folder for upload
-UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static/img/db_img/')
+UPLOAD_FOLDER = './app/static/img/db_img/'
 MAX_IMAGE_FILESIZE = 0.5 * 1024 * 1024
