@@ -40,6 +40,8 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   7. As the ``Serials`` page was replaced by ``Posts``, the ``Posts`` page shows all website posts, new ones go first.
 
-  8. Authenticated users can write their posts. Writing posts includes providing this information: title (mandatory and must be unique), description (optional, but displayed in the list of posts), picture (optional, but displayed in the list of posts), contents (HTML formatting is preferred, the example for paragraphs is provided), resource (can be added to the database manually, but we assume members do not copy-paste the posts of others), author (this field is automatically filled by the ``login`` of the member).
+  8. All posts (both on the ``Posts`` page and Homepage) are stored in cache, cache is released when a member writes a new post.
 
-  9. All HTML pages use Jinja2 inheritance from ``index.html``, which resulted in allocating less space for HTML files. 
+  9. Authenticated users can write their posts. Writing posts includes providing this information: title (mandatory and must be unique), description (optional, but displayed in the list of posts), picture (optional, but displayed in the list of posts), contents (HTML formatting is preferred, the example for paragraphs is provided), resource (can be added to the database manually, but we assume members do not copy-paste the posts of others), author (this field is automatically filled by the ``login`` of the member).
+
+  10. All HTML pages use Jinja2 inheritance from ``index.html``, which resulted in allocating less space for HTML files. 
