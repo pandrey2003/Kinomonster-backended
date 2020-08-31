@@ -47,4 +47,4 @@ The original version of the website is specified in ``CREDITS.rst``.
   10. All HTML pages use Jinja2 inheritance from ``index.html``, which resulted in allocating less space for HTML files. 
 
 
-**Note**: the production server works with ``key.key`` file (dectypts the movie portal gmail password). Secret variables such as ``CSRF_SESSION_KEY`` and ``SECRET_KEY`` (they encrypt data and cookies) were changed from defined in ``config.py``.
+**Note**: the production server works with ``key.key`` file (decrypts the movie portal gmail password). Secret variables such as ``CSRF_SESSION_KEY`` and ``SECRET_KEY`` (they sign data and cookies) were changed from defined in GitHub's ``config.py``.
