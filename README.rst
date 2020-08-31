@@ -42,7 +42,7 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   8. All posts (both on the ``Posts`` page and Homepage) are stored in cache, the cache is released when an authenticated user publishes a new post.
 
-  9. Authenticated users can write their posts. Writing posts includes providing this information: ``title`` (mandatory and must be unique), ``description`` (optional, but displayed in the list of posts), ``picture`` (optional, but displayed in the list of posts), ``contents`` (HTML formatting is preferred, for example ``<p>Write your paragraph here</p>``), ``resource`` (can be added to the database manually, but we assume members do not copy-paste the posts of others), ``author`` (this field is automatically filled by the ``login`` of the member).
+  9. Authenticated users can write posts. Writing posts includes providing this information: ``title`` (mandatory and must be unique), ``description`` (optional, but displayed in the list of posts), ``picture`` (optional, but displayed in the list of posts), ``contents`` (HTML formatting is preferred, for example ``<p>Write your paragraph here</p>``), ``resource`` (can be added to the database manually, but we assume members do not copy-paste the posts of others), ``author`` (this field is automatically filled by the ``login`` of the member).
 
   10. All HTML pages use Jinja2 inheritance from ``index.html``, which resulted in allocating less space for HTML files. 
 
