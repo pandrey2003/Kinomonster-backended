@@ -13,15 +13,15 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   2. Removed the fixed height for the footer. Now the footer does not have the white line on the end of the page.
 
-  3. Removed unnecessary JavaScript, SCSS, Bootstrap imports.
+  3. Removed unnecessary JavaScript, SCSS, Bootstrap files and imports of them.
 
-  4. Movie blocks in the ``movies`` page have ``display: block; overflow: auto;`` styles instead of the fixed height for each block. Hence, all ``div`` there now act as containers for the picture, paragraph and **Watch** button.
+  4. Movie blocks in the ``movies`` page have ``display: block; overflow: auto;`` styles instead of the fixed height for each block. Hence, all ``div`` blocks there now act as containers for a picture, a paragraph and the **Watch** button.
 
   5. Paragraphs for posts in ``index.html`` have a bigger font size, which is comfortable for a reader.
 
   6. Created the ``about`` webpage about my work on the project.
 
-  7. Replaced the ``Serials`` page with the ``Posts`` page (see the back-end section).
+  7. Replaced the ``Serials`` page with the ``Posts`` page (see the back-end section below).
 
   8. Other minor changes.
 
@@ -32,7 +32,7 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   3. The website allows signing in, signing in allows writing posts on the website (see below). After a(n) (un)successful attempt of signing in, JavaScript alert function is called to notify the user.
 
-  4. Members can restore their password, specifying their email.
+  4. Members can restore their password with the email.
 
   5. All movies and serials pages have a real **Reviews** section. You can write reviews which will be retrieved from the SQLite database.
 
@@ -40,11 +40,11 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   7. As the ``Serials`` page was replaced by ``Posts``, the ``Posts`` page shows all website posts, new ones go first.
 
-  8. All posts (both on the ``Posts`` page and Homepage) are stored in cache, the cache is released when an authenticated user writes a post.
+  8. All posts (both on the ``Posts`` page and Homepage) are stored in cache, the cache is released when an authenticated user publishes a new post.
 
-  9. Authenticated users can write their posts. Writing posts includes providing this information: title (mandatory and must be unique), description (optional, but displayed in the list of posts), picture (optional, but displayed in the list of posts), contents (HTML formatting is preferred, the example for paragraphs is provided), resource (can be added to the database manually, but we assume members do not copy-paste the posts of others), author (this field is automatically filled by the ``login`` of the member).
+  9. Authenticated users can write their posts. Writing posts includes providing this information: ``title`` (mandatory and must be unique), ``description`` (optional, but displayed in the list of posts), ``picture`` (optional, but displayed in the list of posts), ``contents`` (HTML formatting is preferred, for example ``<p>Write your paragraph here</p>``), ``resource`` (can be added to the database manually, but we assume members do not copy-paste the posts of others), ``author`` (this field is automatically filled by the ``login`` of the member).
 
   10. All HTML pages use Jinja2 inheritance from ``index.html``, which resulted in allocating less space for HTML files. 
 
 
-**Note**: the production server works with ``key.key`` and with ``CSRF_SESSION_KEY`` and ``SECRET_KEY`` changed.
+**Note**: the production server works with ``key.key`` file (dectypts the movie portal gmail password). Secret variables such as ``CSRF_SESSION_KEY`` and ``SECRET_KEY`` (they encrypt data and cookies) were changed from defined in ``config.py``.
