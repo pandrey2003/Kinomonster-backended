@@ -9,7 +9,6 @@ rope = "*"
 
 [packages]
 flask = "*"
-flask-sqlalchemy = "*"
 cryptography = "*"
 sqlalchemy = "*"
 cachetools = "*"
