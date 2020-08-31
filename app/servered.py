@@ -160,9 +160,9 @@ def show(name):
     if request.method == "POST":
         # Getting all information from the form and passing it
         # to post_review function
-        name = request.form["review_name"]
+        person_name = request.form["review_name"]
         contents = request.form["review_text"]
-        post_review(movie, name, contents)
+        post_review(movie, person_name, contents)
     # Reviews are taken in any case
     reviews = get_reviews(movie)
 
