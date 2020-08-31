@@ -11,7 +11,7 @@ The original version of the website is specified in ``CREDITS.rst``.
 *Front-end*
   1. Replaced Bootstrap's default ``margin-top: 20px;`` for ``h2`` with ``margin-top: 5px;``. This resulted in better looking sidebars.
 
-  2. Removed fixed height for the footer. Now the footer does not have the white line on the end of the page.
+  2. Removed the fixed height for the footer. Now the footer does not have the white line on the end of the page.
 
   3. Removed unnecessary JavaScript, SCSS, Bootstrap imports.
 
@@ -34,7 +34,7 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   4. Members can restore their password, specifying their email.
 
-  5. All  movies and serials pages have a real **Reviews** section. You can write reviews which will be retrieved from the SQLite database.
+  5. All movies and serials pages have a real **Reviews** section. You can write reviews which will be retrieved from the SQLite database.
 
   6. The homepage shows two last posts on the website, which are retrieved from the SQLite database.
 
