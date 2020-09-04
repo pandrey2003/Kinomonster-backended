@@ -8,6 +8,9 @@ body {
   font-size: 1.2em;
   background-color: #fff;
   color: #555;
+  background-color: rgb(241, 244, 249);
+  font-size: 13px;
+  min-height: 100%;
 }
 
 p {
@@ -18,7 +21,7 @@ input[type="text"], input[type="password"], input[type="search"] {
   color: #5d5d5d;
   width: 60%;
   padding: 8px;
-} 
+}
 
 input, textarea {
   outline: none;
@@ -28,8 +31,8 @@ input, textarea {
 
 h1, h2 {
   font: normal 170% 'century gothic', arial;
-  margin: 0 0 15px 0;
-  padding: 15px 0 5px 0;
+  margin: 0 0 15px;
+  padding: 15px 0 5px;
   color: #000;
 }
 
@@ -48,7 +51,7 @@ ul {
 }
 
 ul li {
-  margin: 0 0 6px 0;
+  margin: 0 0 6px;
   padding: 0 0 4px 5px;
   line-height: 1.5em;
 }
@@ -57,8 +60,6 @@ ul li {
   background-color: darkslateblue;
   height: 177px;
   font-size: 0.8em;
-  margin-left: 0px;
-  margin-right: 0px;
   min-width: 900px;
 }
 
@@ -78,7 +79,7 @@ ul li {
 }
 
 .logo_text h1, .logo_text h1 a, .logo_text h1 a:hover {
-  padding: 22px 0 0 0;
+  padding: 22px 0 0;
   color: #fff;
   letter-spacing: 0.1em;
   text-decoration: none;
@@ -86,7 +87,7 @@ ul li {
 
 .logo_text h2 {
   font-size: 1.5em;
-  padding: 4px 0 0 0;
+  padding: 4px 0 0;
   color: #999;
 }
 
@@ -135,12 +136,12 @@ hr {
 .site_content {
   width: 880px;
   overflow:hidden;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 0;
   background-color: white;
 }
 
 .sidebar_container {
-  float: right;;
+  float: right;
   width: 224px;
 }
 
@@ -148,11 +149,10 @@ hr {
   float: right;
   width: 222px;
   padding: 5%;
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
   border: solid 1px #f2f2f2;
   border-radius: 5px;
   background-color: #f9f9f9;
-  padding-top: 0px;
 }
 
 .btn {
@@ -177,7 +177,7 @@ hr {
 
 .sidebar ul li {
   list-style-type: none;
-  margin: 0 0 0 0;
+  margin: 0;
 }
 
 .sidebar .rating_sidebar {
@@ -203,7 +203,7 @@ hr {
   border-radius: 5px;
   border: solid 5px #dad7d5;
   width: 22%;
-} 
+}
 
 .posts .posts_content {
   font-size: 0.8em;
@@ -253,7 +253,7 @@ hr {
 
 .reviews .review_text {
   padding-top: 2%;
-  padding-bottom: 2%; 
+  padding-bottom: 2%;
   padding-left: 2%;
 }
 
@@ -353,12 +353,10 @@ td img {
 /* --- - - - - - - - Start footer - - - - - -- */
 .footer {
   width: 100%;
-  padding: 28px 0 5px 0;
+  padding: 28px 0 5px;
   text-align: center;
   background-color: darkslateblue;
   color: #a8aa94;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .footer a {
@@ -372,7 +370,7 @@ td img {
 }
 
 .footer p {
-  padding: 0 0 10px 0;
+  padding: 0 0 10px;
 }
 /* --- - - - - - - - End Start footer - - - - - -- */
 
@@ -400,13 +398,6 @@ body a {
   text-decoration: none;
 }
 
-body {
-  background-color: rgb(241, 244, 249);
-  font-size: 13px;
-  min-height: 100%;
-}
-
-
 #back-top {
   position: fixed;
   bottom: 45px;
@@ -420,7 +411,6 @@ body {
   font: 10px/100% Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   text-decoration: none;
-  border-bottom: 0px; 
   color: #dadada;
 }
 #back-top a:hover {
@@ -444,7 +434,8 @@ body {
 
 /* --- - - - - - - - Начало scroll мышки - - - - - -- */
 #mice 
-{ margin: 0 auto; padding-bottom: 8em;  padding-top: 5.5em; text-align: center; width: 20px; height: 9px;
+{
+  margin: 0 auto; padding-bottom: 8em;  padding-top: 5.5em; text-align: center; width: 20px; height: 9px;
 }
 #mice span
 {
@@ -461,17 +452,14 @@ body {
 .unu
 {
   margin-top: 6px;
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
 }
 .unu, .doi, .trei
 {
   -webkit-animation: mouse-scroll 1s infinite;
   -moz-animation: mouse-scroll 1s infinite;
-}
-.unu
-{
-  -webkit-animation-delay: .1s;
-  -moz-animation-delay: .1s;
-  -webkit-animation-direction: alternate;
 }
 .doi
 {
@@ -502,9 +490,6 @@ body {
   margin: 7px auto;
   background: white;
   position: relative;
-}
-.wheel
-{
   -webkit-animation: mouse-wheel 1.2s ease infinite;
   -moz-animation: mouse-wheel 1.2s ease infinite;
 }
