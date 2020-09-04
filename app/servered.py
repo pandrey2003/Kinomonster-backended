@@ -26,6 +26,9 @@ from app.mod_db.forgot import restore_password
 # Importing functions from posts module
 from app.mod_db.posts import get_posts_for_home, get_posts, upload
 
+# Importing the last piece of news from news module
+from app.mod_db.news import return_last_piece_of_news
+
 # Initializing the blueprint
 servered = Blueprint(
     "servered",
@@ -39,17 +42,20 @@ servered = Blueprint(
 def home():
     # Returning homepage with 2 last posts
     home_posts = get_posts_for_home()
+    # Returning homepage with the last piece of news
+    news = return_last_piece_of_news()
     return render_template(
         "index.html",
         user_session=user_session,
-        posts=home_posts
+        posts=home_posts,
+        news=news
     )
 
 
 @servered.route("/posts/<int:post_id>")
 def post(post_id):
     # Returning the post with the needed id
-    all_posts = get_posts()
+    all_posts, _ = get_posts()
     try:
         needed_post = all_posts[post_id]
         return render_template(
@@ -64,11 +70,11 @@ def post(post_id):
 @servered.route("/posts")
 def posts():
     # Returning all posts, new ones go first
-    all_posts = get_posts()
+    _, reversed_posts = get_posts()
     return render_template(
         "posts.html",
         user_session=user_session,
-        posts=all_posts
+        posts=reversed_posts
     )
 
 

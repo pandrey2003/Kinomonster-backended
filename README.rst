@@ -44,7 +44,9 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   9. Authenticated users can write posts. Writing posts includes providing this information: ``title`` (mandatory and must be unique), ``description`` (optional, but displayed in the list of posts), ``picture`` (optional, but displayed in the list of posts), ``contents`` (HTML formatting is preferred, for example ``<p>Write your paragraph here</p>``), ``resource`` (can be added to the database manually, but we assume members do not copy-paste the posts of others), ``author`` (this field is automatically filled by the ``login`` of the member).
 
-  10. All HTML pages use Jinja2 inheritance from ``index.html``, which resulted in allocating less space for HTML files. 
+  10. The last piece of news is shown only on the homepage and is retrieved from the SQLite database.
+
+  11. All HTML pages use Jinja2 inheritance from ``index.html``, which resulted in allocating less space for HTML files. 
 
 
 **Note**: the production server works with ``key.key`` file (decrypts the movie portal gmail password). Secret variables such as ``CSRF_SESSION_KEY`` and ``SECRET_KEY`` (they sign data and cookies) were changed from defined in GitHub's ``config.py``.

@@ -42,14 +42,18 @@ ALLOWED_EXTENSIONS = {
 @cached(cache)
 def get_posts():
     # Returning all posts from the table in reversed order
-    return session.query(Posts).all()[::-1]
+    # with indexes specified
+    all_posts = session.query(Posts).all()
+    enumerated_posts = list(enumerate(all_posts))
+    reversed_posts = enumerated_posts[::-1]
+    return (all_posts, reversed_posts)
 
 
 @cached(cache_home)
 def get_posts_for_home():
-    posts = get_posts()
+    _, reversed_posts = get_posts()
     # Returning 2 last posts
-    return posts[0:2]
+    return reversed_posts[0:2]
 
 
 def release_cache():

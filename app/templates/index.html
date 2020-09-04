@@ -84,12 +84,13 @@
 					</form>
 					{% endif %}
 				</div>
+				{% if news %}
 				<div class="sidebar">
 					<h2>News</h2>
-					<span>31.02.2018</span>
-					<p>We launched extended search.</p>
-					<a href="/">Read</a>
+					<span>{{ news.date }}</span>
+					<p>{{ news.contents }}</p>
 				</div>
+				{% endif %}
 				<div class="sidebar">
 					<h2>Movie ratings</h2>
 					<ul>
@@ -118,10 +119,10 @@
 					<a href="{{ url_for('servered.show', name='the_x-files') }}"><img src="{{ url_for('static', filename='img/xfiles.png') }}"></a>
 				</div>
 				<div class="posts">
-					{% for post in posts %}
+					{% for i, post in posts %}
 						<hr>
 						<h2>
-							<a href="{{ url_for('servered.post', post_id=loop.index-1) }}">{{ post.title }}</a>
+							<a href="{{ url_for('servered.post', post_id=i) }}">{{ post.title }}</a>
 						</h2>
 						{% if post.picture %}
 						<img width="100%" src="{{ url_for('static', filename='img/db_img/' + post.picture) }}">
@@ -134,7 +135,7 @@
 						</div>
 						<p>
 							<strong>
-								<a href="{{ url_for('servered.post', post_id=loop.index-1) }}">Read</a>
+								<a href="{{ url_for('servered.post', post_id=i) }}">Read</a>
 							</strong>
 						</p>
 					{% endfor %}

@@ -25,5 +25,6 @@ Base.prepare(engine, reflect=True)
 Members = Base.classes.members
 Posts = Base.classes.posts
 Reviews = Base.classes.reviews
+News = Base.classes.news
 # Initializing session
 session = Session(engine)
