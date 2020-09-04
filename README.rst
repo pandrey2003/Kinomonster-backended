@@ -53,7 +53,7 @@ The original version of the website is specified in ``CREDITS.rst``.
      * ``title`` (mandatory and must be unique);
      * ``description`` (optional, but displayed in the list of posts);
      * ``picture`` (optional, but displayed in the list of posts);
-     * ``contents`` (HTML formatting is preferred, for example ``<p>Write your paragraph here</p>``);
+     * ``contents`` (HTML formatting is preferred, for example: ``<p>Write your paragraph here</p>``);
      * ``resource`` (can be added to the database manually, but we assume members do not copy-paste the posts of others);
      * ``author`` (this field is automatically filled by the ``login`` of the member).
 
