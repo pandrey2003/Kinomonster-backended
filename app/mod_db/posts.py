@@ -19,7 +19,7 @@ from app.mod_db.signingin import user_session
 # Cache for all posts, using float("inf") as None is
 # not implemented
 cache = TTLCache(maxsize=float("inf"), ttl=900)
-# Cache for 2 last posts in homepage
+# Cache for 2 last posts in home page
 cache_home = TTLCache(maxsize=400, ttl=900)
 
 # The list of extensions allowed for img src

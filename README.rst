@@ -26,27 +26,27 @@ The original version of the website is specified in ``CREDITS.rst``.
   8. Other minor changes.
 
 *Back-end*
-  1. The contact form has Python backend: it accepts user input and sends user mails to kinomonsterbackend@gmail.com.
+  1. The contact form has Python back-end: it accepts user input and sends user mails to kinomonsterbackend@gmail.com.
 
   2. Signing up is real and all changes with the website's members are reflected in the SQLite database.
 
-  3. The website allows signing in, signing in allows writing posts on the website (see below). After a(n) (un)successful attempt of signing in, JavaScript alert function is called to notify the user.
+  3. The website allows signing in, signing in allows to write posts on the website (see below). After a(n) (un)successful attempt of signing in, JavaScript alert function is called to notify the user.
 
   4. Members can restore their password with the email.
 
   5. All movies and serials pages have a real **Reviews** section. You can write reviews which will be retrieved from the SQLite database.
 
-  6. The homepage shows two last posts on the website, which are retrieved from the SQLite database.
+  6. The home page shows two last posts on the website, which are retrieved from the SQLite database.
 
   7. As the ``Serials`` page was replaced by ``Posts``, the ``Posts`` page shows all website posts, new ones go first.
 
-  8. All posts (both on the ``Posts`` page and Homepage) are stored in cache, the cache is released when an authenticated user publishes a new post.
+  8. All posts (both on the ``Posts`` page and home page) are stored in a cache, the cache is released when an authenticated user publishes a new post.
 
   9. Authenticated users can write posts. Writing posts includes providing this information: ``title`` (mandatory and must be unique), ``description`` (optional, but displayed in the list of posts), ``picture`` (optional, but displayed in the list of posts), ``contents`` (HTML formatting is preferred, for example ``<p>Write your paragraph here</p>``), ``resource`` (can be added to the database manually, but we assume members do not copy-paste the posts of others), ``author`` (this field is automatically filled by the ``login`` of the member).
 
-  10. The last piece of news is shown only on the homepage and is retrieved from the SQLite database.
+  10. The last piece of news is shown only on the home page and is retrieved from the SQLite database.
 
   11. All HTML pages use Jinja2 inheritance from ``index.html``, which resulted in allocating less space for HTML files. 
 
 
-**Note**: the production server works with ``key.key`` file (decrypts the movie portal gmail password). Secret variables such as ``CSRF_SESSION_KEY`` and ``SECRET_KEY`` (they sign data and cookies) were changed from defined in GitHub's ``config.py``. Database works with different credentials.
+**Note**: the production server works with ``key.key`` file (decrypts the movie portal Gmail password). Private variables such as ``CSRF_SESSION_KEY`` and ``SECRET_KEY`` (they sign data and cookies) were changed from defined in GitHub's ``config.py``. The database works with different credentials.

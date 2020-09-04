@@ -40,9 +40,9 @@ servered = Blueprint(
 
 @servered.route("/")
 def home():
-    # Returning homepage with 2 last posts
+    # Returning home page with 2 last posts
     home_posts = get_posts_for_home()
-    # Returning homepage with the last piece of news
+    # Returning home page with the last piece of news
     news = return_last_piece_of_news()
     return render_template(
         "index.html",
