@@ -27,7 +27,9 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   7. Replaced the ``Serials`` page with the ``Posts`` page (see the back-end section below).
 
-  8. Other minor changes.
+  8. Resolved issues in ``style.css``, which resulted in a CodeFactor's Grade A instead of Grade F.
+
+  9. Other minor changes.
 
 *Back-end*
   1. The contact form has Python back-end: it accepts user input and sends user mails to kinomonsterbackend@gmail.com.
@@ -48,11 +50,11 @@ The original version of the website is specified in ``CREDITS.rst``.
 
   9. Authenticated users can write posts. Writing posts includes providing this information:
 
-     * ``title`` (mandatory and must be unique),
-     * ``description`` (optional, but displayed in the list of posts),
-     * ``picture`` (optional, but displayed in the list of posts),
-     * ``contents`` (HTML formatting is preferred, for example ``<p>Write your paragraph here</p>``),
-     * ``resource`` (can be added to the database manually, but we assume members do not copy-paste the posts of others),
+     * ``title`` (mandatory and must be unique);
+     * ``description`` (optional, but displayed in the list of posts);
+     * ``picture`` (optional, but displayed in the list of posts);
+     * ``contents`` (HTML formatting is preferred, for example ``<p>Write your paragraph here</p>``);
+     * ``resource`` (can be added to the database manually, but we assume members do not copy-paste the posts of others);
      * ``author`` (this field is automatically filled by the ``login`` of the member).
 
   10. The last piece of news is shown only on the home page and is retrieved from the SQLite database.
