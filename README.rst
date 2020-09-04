@@ -2,6 +2,10 @@
 Kinomonster-backended
 *********************
 
+.. image:: https://www.codefactor.io/repository/github/pandrey2003/kinomonster-backended/badge
+   :target: https://www.codefactor.io/repository/github/pandrey2003/kinomonster-backended
+   :alt: CodeFactor
+
 ``Kinomonster-backended`` is an example of using `Flask <https://flask.palletsprojects.com/en/1.1.x/#>`_, a web micro-framework, with `SQLAlchemy <https://www.sqlalchemy.org/>`_ and `SQLite <https://www.sqlite.org/index.html>`_ to provide back-end to the `website <https://n1rvanas.github.io/Kinomonster/>`_.
 
 The original version of the website is specified in ``CREDITS.rst``.
