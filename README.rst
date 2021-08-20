@@ -63,3 +63,9 @@ The original version of the website is specified in ``CREDITS.rst``.
 
 
 **Note**: the production server works with the ``key.key`` file (decrypts the movie portal Gmail password). Server-side variables such as ``CSRF_SESSION_KEY`` and ``SECRET_KEY`` (they sign data and cookies) were changed from defined in GitHub's ``config.py``. The database works with different credentials.
+
+**********
+ATTENTION!
+**********
+
+This repository is no longer maintained and moved to archive.
